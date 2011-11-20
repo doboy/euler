@@ -1,12 +1,14 @@
 from django.conf.urls.defaults import patterns, include, url
+from euler.views import home
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+                       (r'^$', home),
     # Examples:
-    # url(r'^$', 'euler.views.home', name='home'),
+    #  url(r'^$', 'euler.views.home', name='home'),
     # url(r'^euler/', include('euler.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -1,4 +1,22 @@
 # Django settings for euler project.
+import os, socket
+
+if "Huan" in socket.gethostname() or \
+        "Michelle" in socket.gethostname():
+    ENGINE = 'sqlite3'
+    BASEPATH = os.path.realpath(os.path.dirname(__file__)) + '/..'
+    DBNAME = BASEPATH + '/database.db'
+else:
+    ENGINE = 'postgresql_psycopg2'
+    BASEPATH = '/app'
+    DBNAME = 'mydb'
+
+if "Huan" in socket.gethostname():
+    S = '/User/Doboy/Django/decomposition/decomposition/assets/css/'
+elif "Michelle" in socket.gethostname():
+    S = '/User/Doboy/Django/decomposition/decomposition/assets/css/'
+else:
+    S = '/app/assets'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -11,8 +29,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': ENGINE, # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': DBNAME,                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -103,6 +121,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'euler.urls'
 
 TEMPLATE_DIRS = (
+    BASEPATH + '/euler/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -115,6 +134,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'euler.codes',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
