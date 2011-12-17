@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from euler.views import home
+from euler.views import home, add
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -7,6 +7,7 @@ from euler.views import home
 
 urlpatterns = patterns('',
                        (r'^$', home),
+                       (r'^add/$', add),
     # Examples:
     #  url(r'^$', 'euler.views.home', name='home'),
     # url(r'^euler/', include('euler.foo.urls')),

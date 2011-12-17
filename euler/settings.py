@@ -12,9 +12,9 @@ else:
     DBNAME = 'mydb'
 
 if "Huan" in socket.gethostname():
-    S = '/User/Doboy/Django/decomposition/decomposition/assets/css/'
+    S = '/User/Doboy/Django/euler/euler/assets/css/'
 elif "Michelle" in socket.gethostname():
-    S = '/User/Doboy/Django/decomposition/decomposition/assets/css/'
+    S = '/User/Doboy/Django/euler/euler/assets/css/'
 else:
     S = '/app/assets'
 

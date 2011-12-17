@@ -2,11 +2,15 @@
 <head>
 </head>
 <body>
+{% block content %}
 You are home.
-{% for problem in problems %}
-   {{ problem.description }}
-   {{ problem.solution }}
-   {{ problem.comment }}
+{% for problem in problems %}<br/>
+   Problem: {{ problem.number }}<br/>
+   {{ problem.description|safe }}<br/>
+   {{ problem.comment }}<br/>
+   {{ problem.solution|safe }}<br/>
+   <h2>~~~~~~</h2>
 {% endfor %}
+{% endblock %}
 </body>
 </html>
