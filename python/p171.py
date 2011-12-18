@@ -1,3 +1,4 @@
+'''
 vals = set()
 
 def digits( sum=0, values=(), digit=0, amount=21 ):
@@ -23,3 +24,4 @@ digits()
 
 for val in vals:
     print val
+'''

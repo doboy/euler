@@ -1,3 +1,4 @@
+"""
 guesses = {
     '5616185650518293' : 2 ,
     '3847439647293047' : 1 ,
@@ -43,3 +44,5 @@ def guess():
                 guesses[ guess ] += 1
     guessHelper( '', 0 )
 guess()
+
+"""

@@ -41,6 +41,19 @@ def product( iterable ):
         ret *= i
     return ret
 
+# 7
+def primeGen():
+    primesSoFar = []
+    i = 2
+    while True:
+        for p in primesSoFar:
+            if not i % p:
+                break
+        else:
+            primesSoFar.append( i )
+            yield i
+        i += 1
+
 # 9
 def isSquare( n ):
     x = n // 2
