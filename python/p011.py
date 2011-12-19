@@ -7,17 +7,18 @@ def productGen( matrix ):
     n = 20
     for i in xrange( n ):
         for j in xrange( n ):
-            H = 2 <= j <= 17
-            V = 2 <= i <= 17
-            if H:
-                yield product( matrix[ i ][ jj ] for jj in xrange( j - 2, j + 3 ) )
+            V, Vb = j <= 16, j >= 3
+            H, Hb = i <= 16, i >= 3
             if V:
-                yield product( matrix[ ii ][ j ] for ii in xrange( i - 2, i + 3 ) )
+                yield product( matrix[ i ][ j + k ] for k in xrange( 4 ) )
+            if H:
+                yield product( matrix[ i + k ][ j ] for k in xrange( 4 ) )
             if H and V:
                 yield product( matrix[ i + k ][ j + k ] 
-                               for k in xrange( -2, 3 ) )
+                               for k in xrange( 4 ) )
+            if Hb and V:
                 yield product( matrix[ i - k ][ j + k ] 
-                               for k in xrange( -2, 3 ) )
-                
+                               for k in xrange( 4 ) )
+
 print max( productGen( matrix ) )
-# SKIP
+

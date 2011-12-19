@@ -14,7 +14,6 @@ def check( prob, answer ):
                 " \n\texpected: %s" \
                 " \n\tgot: %s" \
                 " \n " % ( prob, answer, output or None)
-            raw_input("uhh..")
     except:
         print >>sys.stderr, "problem executing file %s" % prob
         raw_input("uhh..")

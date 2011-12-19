@@ -1,3 +1,4 @@
+
 Sum, Tree = {}, {}
 
 def initTree( file ):
