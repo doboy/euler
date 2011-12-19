@@ -6,3 +6,4 @@ lib
 *.pyc
 *~
 #~#
+.DS_Store
