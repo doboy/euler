@@ -1,4 +1,4 @@
-from utils import primeGen
+from utils import primeGen, product
 
 def cycle( a, b ):
     n = 0
@@ -15,4 +15,4 @@ def quadGen():
 def cycle( a, b ):
     return None
 
-print max( quadGen() )
+print product( max( quadGen() )[:2] )

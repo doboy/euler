@@ -9,8 +9,7 @@
     problem 009: Passed
     problem 010: 
         expected: 142913828922 
-        got: None 
- 
+        got: None
     problem 011: Passed
     problem 012: Passed
     problem 013: Passed
@@ -19,116 +18,353 @@
     problem 016: Passed
     problem 017: Passed
     problem 018: Passed
-    problem 019: 
-        expected: 171 
-        got: None 
- 
+    problem 019: Passed
     problem 020: Passed
     problem 021: Passed
     problem 022: Passed
     problem 023: Passed
-    problem 024: 
-        expected: 2783915460 
-        got: None 
- 
+    problem 024: Passed
     problem 025: Passed
-    problem executing file 026
-    problem 027: 
-        expected: -59231 
-        got: (None, 999, 997)
- 
- 
+    problem 026: 
+        expected: 983 
+        got: 1
+
+    problem 027: Error
     problem 028: Passed
     problem 029: Passed
-    problem executing file 030
-    problem 031: 
-        expected: 73682 
-        got: 23605209427717177391422967983790010220492941499
- 
- 
-    problem executing file 032
-    problem executing file 033
-    problem executing file 034
-    problem executing file 035
-    problem executing file 036
-    problem executing file 037
-    problem executing file 038
-    problem executing file 039
-    problem executing file 040
-    problem executing file 041
-    problem executing file 042
-    problem executing file 043
-    problem executing file 044
-    problem executing file 045
-    problem executing file 046
-    problem executing file 047
+    problem 030: Error
+    problem 031: Passed
+    problem 032: Error
+    problem 033: Error
+    problem 034: Error
+    problem 035: Error
+    problem 036: Error
+    problem 037: Error
+    problem 038: Error
+    problem 039: Error
+    problem 040: Error
+    problem 041: Error
+    problem 042: Error
+    problem 043: Error
+    problem 044: Error
+    problem 045: 
+        expected: 1533776805 
+        got: None
+    problem 046: Error
+    problem 047: 
+        expected: 134043 
+        got: None
     problem 048: Passed
-    problem executing file 049
-    problem executing file 050
-    problem executing file 051
-    problem 052: 
-        expected: 142857 
-        got: 142857
- 
- 
-    problem executing file 053
-    problem executing file 054
-    problem executing file 055
-    problem executing file 056
-    problem executing file 057
-    problem executing file 058
-    problem executing file 059
-    problem executing file 061
-    problem executing file 062
-    problem executing file 063
-    problem executing file 064
-    problem executing file 065
+    problem 049: Error
+    problem 050: Error
+    problem 051: Error
+    problem 052: Passed
+    problem 053: Error
+    problem 054: Error
+    problem 055: Error
+    problem 056: Error
+    problem 057: Error
+    problem 058: Error
+    problem 059: Error
+    problem 060: Unsolved
+    problem 061: Error
+    problem 062: Error
+    problem 063: Error
+    problem 064: Error
+    problem 065: Error
+    problem 066: Unsolved
     problem 067: Passed
-    problem executing file 068
-    problem executing file 069
-    problem executing file 071
-    problem executing file 073
-    problem executing file 074
-    problem executing file 076
-    problem executing file 077
-    problem executing file 079
-    problem executing file 080
-    problem executing file 081
-    problem executing file 082
-    problem executing file 083
-    problem executing file 085
-    problem executing file 087
-    problem executing file 090
-    problem executing file 092
-    problem executing file 093
-    problem executing file 096
-    problem executing file 097
-    problem executing file 098
-    problem executing file 099
-    problem executing file 102
-    problem executing file 104
-    problem executing file 107
-    problem executing file 112
-    problem executing file 113
-    problem executing file 114
-    problem executing file 115
-    problem executing file 116
-    problem executing file 117
+    problem 068: Error
+    problem 069: Error
+    problem 070: Unsolved
+    problem 071: Error
+    problem 072: Unsolved
+    problem 073: Error
+    problem 074: Error
+    problem 075: Unsolved
+    problem 076: Passed
+    problem 077: Error
+    problem 078: Unsolved
+    problem 079: Error
+    problem 080: Error
+    problem 081: Error
+    problem 082: Error
+    problem 083: Error
+    problem 084: Unsolved
+    problem 085: Error
+    problem 086: Unsolved
+    problem 087: Error
+    problem 088: Unsolved
+    problem 089: Unsolved
+    problem 090: Error
+    problem 091: Unsolved
+    problem 092: Error
+    problem 093: Error
+    problem 094: Unsolved
+    problem 095: Unsolved
+    problem 096: Error
+    problem 097: Error
+    problem 098: Error
+    problem 099: Error
+    problem 100: Unsolved
+    problem 101: Unsolved
+    problem 102: Error
+    problem 103: Unsolved
+    problem 104: Error
+    problem 105: Unsolved
+    problem 106: Unsolved
+    problem 107: Error
+    problem 108: Unsolved
+    problem 109: Unsolved
+    problem 110: Unsolved
+    problem 111: Unsolved
+    problem 112: Error
+    problem 113: Error
+    problem 114: Error
+    problem 115: Error
+    problem 116: Error
+    problem 117: Error
+    problem 118: Unsolved
+    problem 119: Unsolved
     problem 120: Passed
-    problem executing file 122
-    problem executing file 123
-    problem executing file 125
-    problem executing file 128
-    problem executing file 145
-    problem executing file 162
-    problem executing file 164
-    problem executing file 169
-    problem executing file 172
-    problem executing file 173
-    problem executing file 178
-    problem executing file 188
-    problem executing file 191
-    problem executing file 203
-    problem executing file 204
-    problem executing file 205
-    problem executing file 206
+    problem 121: Unsolved
+    problem 122: Error
+    problem 123: Error
+    problem 124: Unsolved
+    problem 125: Error
+    problem 126: Unsolved
+    problem 127: Unsolved
+    problem 128: Error
+    problem 129: Unsolved
+    problem 130: Unsolved
+    problem 131: Unsolved
+    problem 132: Unsolved
+    problem 133: Unsolved
+    problem 134: Unsolved
+    problem 135: Unsolved
+    problem 136: Unsolved
+    problem 137: Unsolved
+    problem 138: Unsolved
+    problem 139: Unsolved
+    problem 140: Unsolved
+    problem 141: Unsolved
+    problem 142: Unsolved
+    problem 143: Unsolved
+    problem 144: Unsolved
+    problem 145: Error
+    problem 146: Unsolved
+    problem 147: Unsolved
+    problem 148: Unsolved
+    problem 149: Unsolved
+    problem 150: Unsolved
+    problem 151: Unsolved
+    problem 152: Unsolved
+    problem 153: Unsolved
+    problem 154: Unsolved
+    problem 155: Unsolved
+    problem 156: Unsolved
+    problem 157: Unsolved
+    problem 158: Unsolved
+    problem 159: Unsolved
+    problem 160: Unsolved
+    problem 161: Unsolved
+    problem 162: Error
+    problem 163: Unsolved
+    problem 164: Error
+    problem 165: Unsolved
+    problem 166: Unsolved
+    problem 167: Unsolved
+    problem 168: Unsolved
+    problem 169: Error
+    problem 170: Unsolved
+    problem 171: Unsolved
+    problem 172: Error
+    problem 173: Error
+    problem 174: Unsolved
+    problem 175: Unsolved
+    problem 176: Unsolved
+    problem 177: Unsolved
+    problem 178: Error
+    problem 179: Unsolved
+    problem 180: Unsolved
+    problem 181: Unsolved
+    problem 182: Unsolved
+    problem 183: Unsolved
+    problem 184: Unsolved
+    problem 185: Unsolved
+    problem 186: Unsolved
+    problem 187: Unsolved
+    problem 188: Error
+    problem 189: Unsolved
+    problem 190: Unsolved
+    problem 191: Error
+    problem 192: Unsolved
+    problem 193: Unsolved
+    problem 194: Unsolved
+    problem 195: Unsolved
+    problem 196: Unsolved
+    problem 197: Unsolved
+    problem 198: Unsolved
+    problem 199: Unsolved
+    problem 200: Unsolved
+    problem 201: Unsolved
+    problem 202: Unsolved
+    problem 203: Error
+    problem 204: Error
+    problem 205: Error
+    problem 206: Error
+    problem 207: Unsolved
+    problem 208: Unsolved
+    problem 209: Unsolved
+    problem 210: Unsolved
+    problem 211: Unsolved
+    problem 212: Unsolved
+    problem 213: Unsolved
+    problem 214: Unsolved
+    problem 215: Unsolved
+    problem 216: Unsolved
+    problem 217: Unsolved
+    problem 218: Unsolved
+    problem 219: Unsolved
+    problem 220: Unsolved
+    problem 221: Unsolved
+    problem 222: Unsolved
+    problem 223: Unsolved
+    problem 224: Unsolved
+    problem 225: Unsolved
+    problem 226: Unsolved
+    problem 227: Unsolved
+    problem 228: Unsolved
+    problem 229: Unsolved
+    problem 230: Unsolved
+    problem 231: Unsolved
+    problem 232: Unsolved
+    problem 233: Unsolved
+    problem 234: Unsolved
+    problem 235: Unsolved
+    problem 236: Unsolved
+    problem 237: Unsolved
+    problem 238: Unsolved
+    problem 239: Unsolved
+    problem 240: Unsolved
+    problem 241: Unsolved
+    problem 242: Unsolved
+    problem 243: Unsolved
+    problem 244: Unsolved
+    problem 245: Unsolved
+    problem 246: Unsolved
+    problem 247: Unsolved
+    problem 248: Unsolved
+    problem 249: Unsolved
+    problem 250: Unsolved
+    problem 251: Unsolved
+    problem 252: Unsolved
+    problem 253: Unsolved
+    problem 254: Unsolved
+    problem 255: Unsolved
+    problem 256: Unsolved
+    problem 257: Unsolved
+    problem 258: Unsolved
+    problem 259: Unsolved
+    problem 260: Unsolved
+    problem 261: Unsolved
+    problem 262: Unsolved
+    problem 263: Unsolved
+    problem 264: Unsolved
+    problem 265: Unsolved
+    problem 266: Unsolved
+    problem 267: Unsolved
+    problem 268: Unsolved
+    problem 269: Unsolved
+    problem 270: Unsolved
+    problem 271: Unsolved
+    problem 272: Unsolved
+    problem 273: Unsolved
+    problem 274: Unsolved
+    problem 275: Unsolved
+    problem 276: Unsolved
+    problem 277: Unsolved
+    problem 278: Unsolved
+    problem 279: Unsolved
+    problem 280: Unsolved
+    problem 281: Unsolved
+    problem 282: Unsolved
+    problem 283: Unsolved
+    problem 284: Unsolved
+    problem 285: Unsolved
+    problem 286: Unsolved
+    problem 287: Unsolved
+    problem 288: Unsolved
+    problem 289: Unsolved
+    problem 290: Unsolved
+    problem 291: Unsolved
+    problem 292: Unsolved
+    problem 293: Unsolved
+    problem 294: Unsolved
+    problem 295: Unsolved
+    problem 296: Unsolved
+    problem 297: Unsolved
+    problem 298: Unsolved
+    problem 299: Unsolved
+    problem 300: Unsolved
+    problem 301: Unsolved
+    problem 302: Unsolved
+    problem 303: Unsolved
+    problem 304: Unsolved
+    problem 305: Unsolved
+    problem 306: Unsolved
+    problem 307: Unsolved
+    problem 308: Unsolved
+    problem 309: Unsolved
+    problem 310: Unsolved
+    problem 311: Unsolved
+    problem 312: Unsolved
+    problem 313: Unsolved
+    problem 314: Unsolved
+    problem 315: Unsolved
+    problem 316: Unsolved
+    problem 317: Unsolved
+    problem 318: Unsolved
+    problem 319: Unsolved
+    problem 320: Unsolved
+    problem 321: Unsolved
+    problem 322: Unsolved
+    problem 323: Unsolved
+    problem 324: Unsolved
+    problem 325: Unsolved
+    problem 326: Unsolved
+    problem 327: Unsolved
+    problem 328: Unsolved
+    problem 329: Unsolved
+    problem 330: Unsolved
+    problem 331: Unsolved
+    problem 332: Unsolved
+    problem 333: Unsolved
+    problem 334: Unsolved
+    problem 335: Unsolved
+    problem 336: Unsolved
+    problem 337: Unsolved
+    problem 338: Unsolved
+    problem 339: Unsolved
+    problem 340: Unsolved
+    problem 341: Unsolved
+    problem 342: Unsolved
+    problem 343: Unsolved
+    problem 344: Unsolved
+    problem 345: Unsolved
+    problem 346: Unsolved
+    problem 347: Unsolved
+    problem 348: Unsolved
+    problem 349: Unsolved
+    problem 350: Unsolved
+    problem 351: Unsolved
+    problem 352: Unsolved
+    problem 353: Unsolved
+    problem 354: Unsolved
+    problem 355: Unsolved
+    problem 356: Unsolved
+    problem 357: Unsolved
+    problem 358: Unsolved
+    problem 359: Unsolved
+    problem 360: Unsolved
+    problem 361: Unsolved

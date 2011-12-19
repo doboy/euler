@@ -163,10 +163,16 @@ def tot( n ):
 
 # 31
 def change( n, coins ):
-    ways = { 0 : 1 }
+    ''' ways[ a, b ] means there are that many ways to get a amount using
+    coins [ 0 .. b ) '''
+    ways = {}
+    for i in xrange( len( coins ) ):
+        ways[ 0, i ] = 1
     for i in xrange( 1, n + 1 ):
-        ways[ i ] = sum( ways.get( i - c, 0 ) for c in coins )
-    return ways[ n ]
+        for c, cc in enumerate( coins ):
+            ways[ i, c ] = ( ways[ i - cc, c ] if i - cc >= 0 else 0 ) +\
+                ( ways[ i, c - 1 ] if c else 0 )
+    return ways[ n, len( coins ) - 1 ]
 
 # 45
 def argmin( *seq ):
@@ -179,3 +185,21 @@ def equals( *seq ):
             return False
     return True
     
+# 19
+def dateGen( start, end, delta ):
+    n = start
+    while n <= end:
+        yield n.day
+        n += delta
+# 24
+def fact( n ):
+    r = 1
+    for i in xrange( 1, n + 1 ):
+        r *= i
+    return r
+
+def number( seq ):
+    r = 0
+    for x in seq:
+        r = r * 10 + x
+    return r
