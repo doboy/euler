@@ -1,4 +1,4 @@
-from Prime import primeGen
+from utils import primeGen
 
 gen = primeGen()
 i, primeI = 1, gen.next()

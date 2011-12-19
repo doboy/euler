@@ -1,4 +1,5 @@
 from math import log10
+from utils import primeGen
 
 cps = {}
 
@@ -10,4 +11,5 @@ for x in primeGen( 1000000 ):
     if isCircular( n ):
         cps.add( x )
     
-print len( cps )
+# print len( cps )
+# TODO

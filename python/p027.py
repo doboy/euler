@@ -15,4 +15,5 @@ def quadGen():
 def cycle( a, b ):
     return None
 
-print product( max( quadGen() )[:2] )
+# print product( max( quadGen() )[:2] )
+# TODO

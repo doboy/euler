@@ -43,8 +43,10 @@ def product( iterable ):
 
 # 7, 27
 def primeGen( max=None ):
-    primesSoFar = []
-    i = 2
+    yield 2; yield 3
+    primesSoFar = set()
+    i = 5
+    adder = 2
     while True:
         for p in primesSoFar:
             if not i % p:
@@ -52,9 +54,10 @@ def primeGen( max=None ):
         else:
             if max and i > max:
                 return
-            primesSoFar.append( i )
+            primesSoFar.add( i )
             yield i
-        i += 1
+        i += adder
+        adder = 6 - adder
 
 # 9
 def isSquare( n ):
@@ -158,8 +161,16 @@ def ord( n, a ):
             return k
 
 def tot( n ):
-    ret = 1
-    return 1
+    ret = n
+    for p in primeGen( n ):
+        if not n % p:
+            ret = ret * ( p - 1 ) // p
+    return ret
+
+def gcd( a, b ):
+    while b:
+        a, b = b, a % b
+    return a
 
 # 31
 def change( n, coins ):
@@ -203,3 +214,29 @@ def number( seq ):
     for x in seq:
         r = r * 10 + x
     return r
+
+# 63
+def count( seq ):
+    return sum( 1 for x in seq )
+
+# 83
+class Vertex:
+    pass
+
+class Edge:
+    pass
+
+class Graph:
+    
+    def __init__( self, E, V ):
+        self.Edges = E
+        self.Vertices = V
+
+    def shortestPath( self, s ):
+        H = [ s ]
+        dist = { s : 0 }
+        while H:
+            e = heapppop( H )
+            for e, v in self.edges( e ):
+                pass
+

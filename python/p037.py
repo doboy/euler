@@ -1,3 +1,7 @@
+from utils import isPrime
+
+return
+
 s = set()
 
 def isTrunc( n ):

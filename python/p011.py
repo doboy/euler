@@ -1,7 +1,7 @@
 from utils import product
 
 matrix = [ [ int( element ) for element in line.split() ]
-           for line in open( "../txt/p11" ) ]
+           for line in open( "../txt/p011" ) ]
 
 def productGen( matrix ):
     n = 20

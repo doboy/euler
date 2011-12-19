@@ -1,140 +1,131 @@
-    problem 001: Passed
-    problem 002: Passed
-    problem 003: Passed
-    problem 004: Passed
-    problem 005: Passed
-    problem 006: Passed
-    problem 007: Passed
-    problem 008: Passed
-    problem 009: Passed
-    problem 010: 
-        expected: 142913828922 
-        got: None
-    problem 011: Passed
-    problem 012: Passed
-    problem 013: Passed
-    problem 014: Passed
-    problem 015: Passed
-    problem 016: Passed
-    problem 017: Passed
-    problem 018: Passed
-    problem 019: Passed
-    problem 020: Passed
-    problem 021: Passed
-    problem 022: Passed
-    problem 023: Passed
-    problem 024: Passed
-    problem 025: Passed
-    problem 026: 
-        expected: 983 
-        got: 1
-
-    problem 027: Error
-    problem 028: Passed
-    problem 029: Passed
-    problem 030: Error
-    problem 031: Passed
-    problem 032: Error
-    problem 033: Error
-    problem 034: Error
-    problem 035: Error
-    problem 036: Error
-    problem 037: Error
-    problem 038: Error
-    problem 039: Error
-    problem 040: Error
-    problem 041: Error
-    problem 042: Error
-    problem 043: Error
-    problem 044: Error
-    problem 045: 
-        expected: 1533776805 
-        got: None
-    problem 046: Error
-    problem 047: 
-        expected: 134043 
-        got: None
-    problem 048: Passed
-    problem 049: Error
-    problem 050: Error
-    problem 051: Error
-    problem 052: Passed
-    problem 053: Error
-    problem 054: Error
-    problem 055: Error
-    problem 056: Error
-    problem 057: Error
-    problem 058: Error
-    problem 059: Error
+    problem 001: Solved in 43.5951ms
+    problem 002: Solved in 37.5462ms
+    problem 003: Solved in 43.2670ms
+    problem 004: Solved in 1330.5981ms
+    problem 005: Solved in 39.8450ms
+    problem 006: Solved in 37.6830ms
+    problem 007: In Progress
+    problem 008: Solved in 53.5340ms
+    problem 009: Solved in 731.8110ms
+    problem 010: In Progress
+    problem 011: Solved in 50.0460ms
+    problem 012: In Progress
+    problem 013: Solved in 42.0620ms
+    problem 014: In Progress
+    problem 015: Solved in 66.4411ms
+    problem 016: Solved in 50.8358ms
+    problem 017: Solved in 56.2840ms
+    problem 018: Solved in 43.2839ms
+    problem 019: Solved in 43.0100ms
+    problem 020: Solved in 39.1760ms
+    problem 021: In Progress
+    problem 022: Solved in 85.8920ms
+    problem 023: In Progress
+    problem 024: Solved in 43.9651ms
+    problem 025: Solved in 49.6299ms
+    problem 026: Wrong Output
+    problem 027: In Progress
+    problem 028: Solved in 43.8330ms
+    problem 029: Solved in 76.8130ms
+    problem 030: In Progress
+    problem 031: In Progress
+    problem 032: In Progress
+    problem 033: In Progress
+    problem 034: In Progress
+    problem 035: In Progress
+    problem 036: In Progress
+    problem 037: In Progress
+    problem 038: In Progress
+    problem 039: In Progress
+    problem 040: In Progress
+    problem 041: In Progress
+    problem 042: In Progress
+    problem 043: In Progress
+    problem 044: In Progress
+    problem 045: In Progress
+    problem 046: In Progress
+    problem 047: In Progress
+    problem 048: Solved in 54.1749ms
+    problem 049: In Progress
+    problem 050: In Progress
+    problem 051: In Progress
+    problem 052: In Progress
+    problem 053: In Progress
+    problem 054: In Progress
+    problem 055: In Progress
+    problem 056: In Progress
+    problem 057: In Progress
+    problem 058: In Progress
+    problem 059: In Progress
     problem 060: Unsolved
-    problem 061: Error
-    problem 062: Error
-    problem 063: Error
-    problem 064: Error
-    problem 065: Error
+    problem 061: In Progress
+    problem 062: In Progress
+    problem 063: In Progress
+    problem 064: In Progress
+    problem 065: In Progress
     problem 066: Unsolved
-    problem 067: Passed
-    problem 068: Error
-    problem 069: Error
+    problem 067: In Progress
+    problem 068: In Progress
+    problem 069: In Progress
     problem 070: Unsolved
-    problem 071: Error
+    problem 071: In Progress
     problem 072: Unsolved
-    problem 073: Error
-    problem 074: Error
+    problem 073: In Progress
+    problem 074: In Progress
     problem 075: Unsolved
-    problem 076: Passed
-    problem 077: Error
+    problem 076: In Progress
+    problem 077: Solved in 128.3479ms
     problem 078: Unsolved
-    problem 079: Error
-    problem 080: Error
-    problem 081: Error
-    problem 082: Error
-    problem 083: Error
+    problem 079: In Progress
+    problem 080: In Progress
+    problem 081: In Progress
+    problem 082: In Progress
+    problem 083: In Progress
     problem 084: Unsolved
-    problem 085: Error
+    problem 085: In Progress
     problem 086: Unsolved
-    problem 087: Error
+    problem 087: In Progress
     problem 088: Unsolved
     problem 089: Unsolved
-    problem 090: Error
+    problem 090: In Progress
     problem 091: Unsolved
-    problem 092: Error
-    problem 093: Error
+    problem 092: In Progress
+    problem 093: In Progress
     problem 094: Unsolved
     problem 095: Unsolved
-    problem 096: Error
-    problem 097: Error
-    problem 098: Error
-    problem 099: Error
+    problem 096: In Progress
+    problem 097: In Progress
+    problem 098: In Progress
+    problem 099: In Progress
     problem 100: Unsolved
     problem 101: Unsolved
-    problem 102: Error
+    problem 102: In Progress
     problem 103: Unsolved
-    problem 104: Error
+    problem 104: In Progress
     problem 105: Unsolved
     problem 106: Unsolved
-    problem 107: Error
+    problem 107: In Progress
     problem 108: Unsolved
     problem 109: Unsolved
     problem 110: Unsolved
     problem 111: Unsolved
-    problem 112: Error
-    problem 113: Error
-    problem 114: Error
-    problem 115: Error
-    problem 116: Error
-    problem 117: Error
+    problem 112: In Progress
+    problem 113: In Progress
+    problem 114: In Progress
+    problem 115: In Progress
+    problem 116: In Progress
+    problem 117: In Progress
     problem 118: Unsolved
     problem 119: Unsolved
-    problem 120: Passed
+    problem 120: Solved in 50.5970ms
     problem 121: Unsolved
-    problem 122: Error
-    problem 123: Error
+    problem 122: In Progress
+    problem 123: In Progress
     problem 124: Unsolved
-    problem 125: Error
+    problem 125: In Progress
     problem 126: Unsolved
     problem 127: Unsolved
-    problem 128: Error
+    problem 128: In Progress
     problem 129: Unsolved
     problem 130: Unsolved
     problem 131: Unsolved
@@ -151,7 +142,7 @@
     problem 142: Unsolved
     problem 143: Unsolved
     problem 144: Unsolved
-    problem 145: Error
+    problem 145: In Progress
     problem 146: Unsolved
     problem 147: Unsolved
     problem 148: Unsolved
@@ -168,23 +159,23 @@
     problem 159: Unsolved
     problem 160: Unsolved
     problem 161: Unsolved
-    problem 162: Error
+    problem 162: In Progress
     problem 163: Unsolved
-    problem 164: Error
+    problem 164: In Progress
     problem 165: Unsolved
     problem 166: Unsolved
     problem 167: Unsolved
     problem 168: Unsolved
-    problem 169: Error
+    problem 169: In Progress
     problem 170: Unsolved
     problem 171: Unsolved
-    problem 172: Error
-    problem 173: Error
+    problem 172: In Progress
+    problem 173: In Progress
     problem 174: Unsolved
     problem 175: Unsolved
     problem 176: Unsolved
     problem 177: Unsolved
-    problem 178: Error
+    problem 178: In Progress
     problem 179: Unsolved
     problem 180: Unsolved
     problem 181: Unsolved
@@ -194,10 +185,10 @@
     problem 185: Unsolved
     problem 186: Unsolved
     problem 187: Unsolved
-    problem 188: Error
+    problem 188: In Progress
     problem 189: Unsolved
     problem 190: Unsolved
-    problem 191: Error
+    problem 191: In Progress
     problem 192: Unsolved
     problem 193: Unsolved
     problem 194: Unsolved
@@ -209,10 +200,10 @@
     problem 200: Unsolved
     problem 201: Unsolved
     problem 202: Unsolved
-    problem 203: Error
-    problem 204: Error
-    problem 205: Error
-    problem 206: Error
+    problem 203: In Progress
+    problem 204: In Progress
+    problem 205: In Progress
+    problem 206: In Progress
     problem 207: Unsolved
     problem 208: Unsolved
     problem 209: Unsolved
@@ -368,3 +359,8 @@
     problem 359: Unsolved
     problem 360: Unsolved
     problem 361: Unsolved
+    Summary:
+        Solved: 24
+        Unsolved: 248
+        Wrong Output: 1
+        In Progress: 88
