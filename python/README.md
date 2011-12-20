@@ -1,9 +1,3 @@
-Listing . ...
-Compiling ./check.py ...
-Compiling ./p032.py ...
-SyntaxError: ('invalid syntax', ('./p032.py', 3, 6, 'for a:\n'))
-
-
     problem 001: Solved in 38.6760ms
     problem 002: Solved in 39.1960ms
     problem 003: Solved in 39.5339ms
