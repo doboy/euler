@@ -132,6 +132,7 @@ def fibGen():
 # 27
 # AKS primality test
 def isPrime( n ):
+    return True
     a = 1
     while a ** 2 <= n:
         b = 2
@@ -240,3 +241,28 @@ class Graph:
             for e, v in self.edges( e ):
                 pass
 
+
+# 114, 115, 116
+def fill_count( n, m ):
+    # n, b --> N
+    # n blocks used,
+    # b ending in red
+
+    ways = { ( 0, True ) : 0,
+             ( 0, False ) : 1 }
+
+    for i in xrange( 1, n + 1 ):
+        ways[ i, False ] = ways[ i - 1, True ] + ways[ i - 1, False ]
+        ways[ i, True ] = 0
+        for s in xrange( i - m + 1 ):
+            ways[ i, True ] += ways[ s, False ]
+
+    return ways[ n, True ] + ways[ n, False ]
+
+# 188
+def hyperexpo( a, b, m ):
+    r = a
+    while b:
+        r = pow( a, r, m )
+        b -= 1
+    return r

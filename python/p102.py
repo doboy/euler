@@ -20,10 +20,9 @@ def dotProduct( v1, v2 ):
 def mag( v1 ):
     return sum( map( lambda x : x ** 2, v1 ) )**.5
 
-
 total = 0
 nontotal = 0
-file = open( "triangles.txt" )
+file = open( "../txt/p102" )
 for line in file:
     tokens = map( int, line.split(',') )
     v0 = tokens[:2]
@@ -34,5 +33,6 @@ for line in file:
     else:
         nontotal += 1
 
-print nontotal
 print total
+
+# LOOK

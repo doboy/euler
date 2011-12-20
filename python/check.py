@@ -1,6 +1,6 @@
 from ast import literal_eval
-from subprocess import check_output
-import sys, time
+from subprocess import check_output, CalledProcessError
+import sys, time, compileall
 
 sys.stderr = sys.stdout
 # Unsolved, Solved
@@ -18,15 +18,21 @@ def check( prob, answer ):
     else:
         try:
             start = time.time()
-            output = check_output( ["python", "p%s.py" % prob] )
+            output = check_output( ["python", "p%s.pyc" % prob] )
             if not output:
                 return "In Progress",
-            elif answer == literal_eval( output ):
-                return "Solved", ( time.time() - start ) * 1000
             else:
-                return "Wrong Output",
-        except:
-            return "In Progress",
+                output_val = literal_eval( output )
+                if answer == output_val:
+                    return "Solved", ( time.time() - start ) * 1000
+                else:
+                    return "Wrong Output",
+        except SyntaxError:
+            return "Wrong Output",
+        except CalledProcessError:
+            return "Unsolved",
+
+compileall.compile_dir( "." )
 
 for line in open( "../txt/check" ):
     prob, answer = line.split()

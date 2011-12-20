@@ -8,8 +8,6 @@ def cycle_len( p ):
             dividand *= 10
         cycle[ dividand ] = dividand % p
         dividand %= p
-    
-
     # TODO
     return 1
 
@@ -17,5 +15,5 @@ def cycleGen( d ):
     for p in primeGen( d ):
         yield cycle_len( p )
 
-print max( cycleGen( 1000 ) )
-
+# print max( cycleGen( 1000 ) )
+# TODO

@@ -1,7 +1,5 @@
 from utils import isPrime
 
-return
-
 s = set()
 
 def isTrunc( n ):
@@ -25,3 +23,5 @@ while len( s ) < 11:
     if( isTrunc( i ) ):
         s.add( i )
     i += 1
+
+print i
