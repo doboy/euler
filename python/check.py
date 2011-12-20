@@ -9,8 +9,8 @@ sys.stderr = sys.stdout
 Summary = { "Solved": 0,
             "Unsolved": 0,
             "In Progress": 0,
-            "Wrong Output" : 0
-}
+            "Wrong Output" : 0,
+            "Unwritten" : 0 }
 
 def check( prob, answer ):
     if not answer:
@@ -30,9 +30,10 @@ def check( prob, answer ):
         except SyntaxError:
             return "Wrong Output",
         except CalledProcessError:
-            return "Unsolved",
+            return "Unwritten",
 
 compileall.compile_dir( "." )
+print
 
 for line in open( "../txt/check" ):
     prob, answer = line.split()
@@ -45,6 +46,7 @@ for line in open( "../txt/check" ):
         print
     Summary[ outcome ] += 1
 
+print
 print "    Summary:"
 for k, v in Summary.items():
     print "        %s: %s" % ( k, v )
