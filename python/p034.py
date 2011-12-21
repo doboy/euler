@@ -1,15 +1,10 @@
-from math import log10
-from utils import primeGen
+from utils import digitsGen, fact
 
-cps = {}
+LIMIT = 50000
 
-def isCircular( n ):
-    for i in xrange( int( log10( n ) + 1) ):
-        pass
+def curiousGen():
+    for x in xrange( 10, LIMIT ):
+        if x == sum( map( fact, digitsGen( x ) ) ):
+            yield x
 
-# for x in primesGen( 1000000 ):
-#    if isCircular( x ):
-#        cps.add( x )
-#    
-# print len( cps )
-# TODO
+print sum( curiousGen() )

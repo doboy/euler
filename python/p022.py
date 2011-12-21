@@ -1,5 +1,5 @@
-chars = " ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-points = { chars[ i ] : i for i in xrange( 1, len( chars ) ) }
+from utils import chars, points
+
 names = sorted( eval( open( "../txt/p022" ).read() ) )
 
 def score( wd ):

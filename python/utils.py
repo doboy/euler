@@ -18,6 +18,7 @@
   # 
 from operator import mul
 from itertools import count as irange
+from math import sqrt, log10
 
 def isPal( s ):
     for i in xrange( len( s )/2 ):
@@ -132,8 +133,18 @@ def fibGen():
 # 27
 # AKS primality test
 def isPrime( n ):
-    return True
-    a = 1
+    for i in xrange( 2, int( sqrt( n ) ) + 1 ):
+        if not n % i:
+            return True
+    return isSquare( n )
+
+def isPrimeAKS( n ):
+    # STEP 0
+    if n == 1:
+        return False
+
+    # STEP 1
+    a = 2
     while a ** 2 <= n:
         b = 2
         while a ** b <= n:
@@ -150,8 +161,9 @@ def isPrime( n ):
             return False
     if n <= r:
         return True
-    for a in xrange( 1, sqrt( tot( r ) ) * log( n ) ):
-        if ( x+a ) ** n % n != ( X ** n + a ) % n:
+
+    for a in xrange( 1, int( sqrt( tot( r ) ) * log10( n ) ) + 1 ):
+        if ( X + a ) ** n % n != ( X ** n + a ) % n:
             return False
     return True
 
@@ -266,3 +278,32 @@ def hyperexpo( a, b, m ):
         r = pow( a, r, m )
         b -= 1
     return r
+
+# 36
+def isBinaryPal( n ):
+    temp = n
+    reverse = 0
+    while temp:
+        reverse <<= 1
+        reverse += temp & 1
+        temp >>= 1
+    return n == reverse
+        
+def isDecimalPal( n ):
+    temp = n
+    reverse = 0
+    while temp:
+        reverse *= 10
+        reverse += temp % 10
+        temp //= 10
+    return n == reverse
+        
+# 22, 42
+chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+points = { chars[ i ] : i + 1 for i in xrange( len( chars ) ) }
+
+# 42
+
+def isTriangle( n ):
+    s = int( sqrt( n * 2 ) )
+    return 2 * n == s * ( s + 1 )
