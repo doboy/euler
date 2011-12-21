@@ -3,58 +3,58 @@ Compiling ./p032.py ...
 SyntaxError: ('invalid syntax', ('./p032.py', 3, 6, 'for a:\n'))
 
 
-    problem 001: Solved in 38.2879ms
-    problem 002: Solved in 40.5040ms
-    problem 003: Solved in 39.3331ms
-    problem 004: Solved in 1363.5731ms
-    problem 005: Solved in 39.0100ms
-    problem 006: Solved in 37.1299ms
-    problem 007: Solved in 6307.3010ms
-    problem 008: Solved in 41.2331ms
-    problem 009: Solved in 701.0269ms
+    problem 001: Solved in 40.3991ms
+    problem 002: Solved in 37.7090ms
+    problem 003: Solved in 39.6280ms
+    problem 004: Solved in 1339.1149ms
+    problem 005: Solved in 39.4521ms
+    problem 006: Solved in 39.5432ms
+    problem 007: Solved in 6513.4890ms
+    problem 008: Solved in 39.3062ms
+    problem 009: Solved in 752.5899ms
     problem 010: In Progress
-    problem 011: Solved in 43.6978ms
-    problem 012: Solved in 6304.5471ms
-    problem 013: Solved in 38.2450ms
-    problem 014: Solved in 6545.3420ms
-    problem 015: Solved in 39.9292ms
-    problem 016: Solved in 41.9300ms
-    problem 017: Solved in 45.3169ms
-    problem 018: Solved in 39.6481ms
-    problem 019: Solved in 46.0420ms
-    problem 020: Solved in 41.7430ms
-    problem 021: Solved in 292.2840ms
-    problem 022: Solved in 79.4940ms
-    problem 023: Solved in 6028.7910ms
-    problem 024: Solved in 39.3920ms
-    problem 025: Solved in 44.7090ms
+    problem 011: Solved in 45.6491ms
+    problem 012: Solved in 6756.3238ms
+    problem 013: Solved in 39.4449ms
+    problem 014: Solved in 7479.0928ms
+    problem 015: Solved in 42.6590ms
+    problem 016: Solved in 49.3081ms
+    problem 017: Solved in 57.9050ms
+    problem 018: Solved in 49.1951ms
+    problem 019: Solved in 56.0510ms
+    problem 020: Solved in 51.2681ms
+    problem 021: Solved in 321.5570ms
+    problem 022: Solved in 77.8439ms
+    problem 023: Solved in 6321.8200ms
+    problem 024: Solved in 39.6738ms
+    problem 025: Solved in 45.1760ms
     problem 026: In Progress
     problem 027: In Progress
-    problem 028: Solved in 37.7049ms
-    problem 029: Solved in 72.0940ms
-    problem 030: Solved in 2284.7021ms
-    problem 031: Solved in 43.8380ms
+    problem 028: Solved in 38.8460ms
+    problem 029: Solved in 71.2249ms
+    problem 030: Solved in 2439.8589ms
+    problem 031: Solved in 44.1239ms
     problem 032: Unwritten
     problem 033: Unwritten
-    problem 034: Solved in 615.4568ms
+    problem 034: Solved in 632.0210ms
     problem 035: Unwritten
-    problem 036: Solved in 2660.5351ms
+    problem 036: Solved in 2854.9190ms
     problem 037: Wrong Output
     problem 038: Unwritten
     problem 039: In Progress
     problem 040: Unwritten
     problem 041: Unwritten
-    problem 042: Solved in 55.9220ms
+    problem 042: Solved in 94.3670ms
     problem 043: Unwritten
     problem 044: Unwritten
     problem 045: In Progress
     problem 046: Unwritten
     problem 047: In Progress
-    problem 048: Solved in 45.9030ms
+    problem 048: Solved in 61.4080ms
     problem 049: Unwritten
     problem 050: Unwritten
     problem 051: Unwritten
-    problem 052: Solved in 3586.0660ms
+    problem 052: Solved in 4121.8100ms
     problem 053: Unwritten
     problem 054: Unwritten
     problem 055: Unwritten
@@ -64,12 +64,12 @@ SyntaxError: ('invalid syntax', ('./p032.py', 3, 6, 'for a:\n'))
     problem 059: Unwritten
     problem 060: Unsolved
     problem 061: Unwritten
-    problem 062: Solved in 142.0541ms
+    problem 062: Solved in 144.8789ms
     problem 063: In Progress
     problem 064: Unwritten
     problem 065: Unwritten
     problem 066: Unsolved
-    problem 067: Solved in 49.0580ms
+    problem 067: Solved in 76.3972ms
     problem 068: Unwritten
     problem 069: Unwritten
     problem 070: Unsolved
@@ -78,8 +78,8 @@ SyntaxError: ('invalid syntax', ('./p032.py', 3, 6, 'for a:\n'))
     problem 073: Unwritten
     problem 074: Unwritten
     problem 075: Unsolved
-    problem 076: Solved in 55.2869ms
-    problem 077: Solved in 74.1248ms
+    problem 076: Solved in 53.7848ms
+    problem 077: Solved in 74.7099ms
     problem 078: Unsolved
     problem 079: Unwritten
     problem 080: Unwritten
@@ -99,12 +99,12 @@ SyntaxError: ('invalid syntax', ('./p032.py', 3, 6, 'for a:\n'))
     problem 094: Unsolved
     problem 095: Unsolved
     problem 096: Unwritten
-    problem 097: Solved in 39.3391ms
+    problem 097: Solved in 39.8378ms
     problem 098: Unwritten
-    problem 099: Solved in 59.9720ms
+    problem 099: Solved in 58.3210ms
     problem 100: Unsolved
     problem 101: Unsolved
-    problem 102: Solved in 71.5470ms
+    problem 102: Solved in 72.5081ms
     problem 103: Unsolved
     problem 104: Unwritten
     problem 105: Unsolved
@@ -116,16 +116,16 @@ SyntaxError: ('invalid syntax', ('./p032.py', 3, 6, 'for a:\n'))
     problem 111: Unsolved
     problem 112: Unwritten
     problem 113: Wrong Output
-    problem 114: Solved in 42.1851ms
-    problem 115: Solved in 232.3680ms
-    problem 116: Solved in 37.5051ms
+    problem 114: Solved in 41.2478ms
+    problem 115: Solved in 293.9789ms
+    problem 116: Solved in 68.6729ms
     problem 117: Unwritten
     problem 118: Unsolved
     problem 119: Unsolved
-    problem 120: Solved in 40.7550ms
+    problem 120: Solved in 74.1279ms
     problem 121: Unsolved
     problem 122: Unwritten
-    problem 123: Solved in 26735.7259ms
+    problem 123: Solved in 28314.1470ms
     problem 124: Unsolved
     problem 125: Unwritten
     problem 126: Unsolved
@@ -190,10 +190,10 @@ SyntaxError: ('invalid syntax', ('./p032.py', 3, 6, 'for a:\n'))
     problem 185: Unsolved
     problem 186: Unsolved
     problem 187: Unsolved
-    problem 188: Solved in 46.0899ms
+    problem 188: Solved in 44.2781ms
     problem 189: Unsolved
     problem 190: Unsolved
-    problem 191: Solved in 39.1061ms
+    problem 191: Solved in 39.9530ms
     problem 192: Unsolved
     problem 193: Unsolved
     problem 194: Unsolved
