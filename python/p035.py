@@ -1,17 +1,21 @@
-from utils import primeGen
+from utils import primeGen, isPrime, rotated, baseGen
 from math import log10
 
-cps = {}
+cps = { 2, 3, 5, 7, 11 }
 
 def isCircular( n ):
-    return False
-#    for i in xrange( int( log10( n ) + 1) ):
-#        pass
+    digits = int( log10( n ) )
+    for _ in xrange( digits + 1 ):
+        if not isPrime( n ):
+            return False
+        # rotate the number
+        n = rotated( n, digits )
+    return True
 
-for x in primeGen( 1000000 ):
-    if isCircular( n ):
+for x in baseGen( goods=( 0, 1, 3, 7, 9 ),
+                  start=11,
+                  end=10 ** 6 ):
+    if isCircular( x ):
         cps.add( x )
-    
-print len( cps )
 
-# TODO
+print len( cps )

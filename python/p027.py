@@ -1,6 +1,6 @@
-from utils import primeGen, product
+from utils import primeGen, product, isPrime
 
-def cycle( a, b ):
+def primeLen( a, b ):
     n = 0
     while isPrime( n ** 2 + a * n + b ):
         n += 1
@@ -9,11 +9,8 @@ def cycle( a, b ):
 def quadGen():
     for b in primeGen( 1000 ):
         for a in xrange( 1000 ):
-            yield cycle( a, b ), a, b
-            yield cycle( -a, b ), -a, b
+            yield primeLen( a, b ), a, b
+            yield primeLen( -a, b ), -a, b
 
-def cycle( a, b ):
-    return None
-
-# print product( max( quadGen() )[:2] )
-# TODO
+l, a, b = max( quadGen() )
+print a * b

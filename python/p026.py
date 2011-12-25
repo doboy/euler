@@ -1,19 +1,34 @@
 from utils import primeGen
 
-def cycle_len( p ):
-    cycle = {}
-    dividand = 1
-    while dividand not in cycle:
-        while p < dividand:
-            dividand *= 10
-        cycle[ dividand ] = dividand % p
-        dividand %= p
-    # TODO
-    return 1
+# numerator / divisor = remainder + dividee
 
-def cycleGen( d ):
-    for p in primeGen( d ):
-        yield cycle_len( p )
+def cycleLen( divisor ):
+    # Values after the decimal
+    decimals = []
+    
+    # The value under the bar
+    dividianList = []
+    dividianSet = set()
 
-# print max( cycleGen( 1000 ) )
-# TODO
+    dividian = 10
+    while dividian not in dividianSet:
+        dividianList.append( dividian )
+        dividianSet.add( dividian )
+
+        dividee = dividian // divisor
+        remainder = dividian % divisor
+        decimals.append( dividee )
+
+        if not remainder:
+            return 0
+
+        dividian = remainder * 10
+
+    i = -1
+    count = 1
+    while dividianList[ i ] != dividian:
+        count += 1
+        i -= 1
+    return count
+
+print max( ( cycleLen( i ), i ) for i in primeGen( 1000 ) )[ 1 ]
