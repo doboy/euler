@@ -478,20 +478,205 @@ def lexiPermGen( vals, start=0, end=None ):
         s += 1
 
 # 81, 82, 83
-class graphSearch:
+import heapq
 
-    def __init__( self, 
-                  initialFringe,
-                  expandfn,
-                  goalStatefn ):
-        self.fringe = initialFringe
-        self.expand = expandfn
-        self.goalState = goalStatefn
+class graphSearch( object ):
+
+    def __init__( self, fringe, successorFn, goalState, distFn ):
+        self.fringe = fringe
+        self.successorFn = successorFn
+        self.goalState = goalState
+        self.distFn = distFn
+        self.seen = set()
 
     def search( self ):
-        while fringe:
-            node = self.pop( fringe )
-            if self.goalState( node ):
-                return node
-            fringe += self.expand( node )
+        ''' searches for the goal state '''
+        while self.fringe:
+            node = self.pop( self.fringe )
+            dist = self.getDist( node )
+            state = self.getState( node )
+            if state not in self.seen:
+                self.previsit( node )
+                self.seen.add( state )
+                if self.goalState( state ):
+                    return dist
+                for _node in self.expand( node ):
+                    self.add( self.fringe, _node )
 
+    @staticmethod
+    def getState( node ):
+        return node[ 1 ]
+    
+    @staticmethod
+    def getDist( node ):
+        return node[ 0 ]
+
+    def add( self, fringe, to ):
+        ''' adds a node to the fringe '''
+
+    def pop( self, fringe ):
+        ''' returns an element on the fringe to explore'''
+
+    def expand( self, node ):
+        ''' given a node it expands the node '''
+        dist = self.getDist( node )
+        state = self.getState( node )
+        for _state in self.successorFn( state ):
+            yield dist + self.distFn( state, _state ), _state
+
+    def previsit( self, node ):
+        ''' given a node it does some previsit things '''
+
+class bfSearch( graphSearch ):
+
+    def __init__( self, fringe, successorFn, goalStateFn, distFn ):
+        graphSearch.__init__( self, fringe, successorFn, goalStateFn, distFn )
+        
+    def add( self, fringe, to ):
+        fringe.append( to )
+
+    def pop( self, fringe ):
+        return fringe.pop( 0 )
+
+class dfSearch( graphSearch ):
+    def __init__( self, fringe, successorFn, goalStateFn, distFn ):
+        graphSearch.__init__( self, fringe, successorFn, goalStateFn, distFn )
+        
+    def add( self, fringe, to ):
+        fringe.append( to )
+
+    def pop( self, fringe ):
+        return fringe.pop()
+
+class pqSearch( graphSearch ):
+    def __init__( self, fringe, successorFn, goalStateFn, distFn ):
+        graphSearch.__init__( self, fringe, successorFn, goalStateFn, distFn )
+        heapq.heapify( self.fringe )
+
+    def add( self, fringe, to ):
+        heapq.heappush( fringe, to )
+    
+    def pop( self, fringe ):
+        return heapq.heappop( fringe )
+    
+class primSearch( pqSearch ):
+    def __init__( self, fringe, successorFn, distFn, goalStateFn=lambda _: False ):
+        pqSearch.__init__( self, fringe, successorFn, goalStateFn, distFn )
+        self.prev = {}
+
+    def expand( self, node ):
+        ''' given a node it expands the node '''
+        state = self.getState( node )
+        for _state in self.successorFn( state ):
+            if _state not in self.seen:
+                yield self.distFn( state, _state ), _state, state
+
+    def previsit( self, node ):
+        ''' given a node it does some previsit things '''
+        self.prev[ self.getState( node ) ] = self.getPrev( node )
+
+    @staticmethod
+    def getPrev( node ):
+        return node[ 2 ]
+
+def order( n ):
+    ''' return the number of zeros of n '''
+    f = 5
+    r = 0
+    while n and not n % f:
+        r += n // f
+        f *= f
+    return r
+
+def orderC( n, r ):
+    ''' return the number of zeros of n choose r '''
+    return order( n ) - order( n - r ) - order( r )
+
+
+def choose( n, r ):
+    '''n choose r = n! / r! * ( n-r )! <==> n * n-1 * .. * n-r+1 / r!'''
+    return product( xrange( n - r + 1, n + 1 ) ) \
+        / product( xrange( 1, r + 1 ) )
+
+# 57
+class fraction:
+
+    def __init__( self, n, d=1 ):
+        self.n, self.d = n, d
+
+    def reduce( self ):
+        g = gcd( self.n, self.d )
+        self.n //= g
+        self.d //= g
+
+    def __add__( self, other ):
+        l = lcm( self.n, self.d )
+        return fraction( self.n * self.d / l + other.n * other.d / l,
+                         l )
+
+# krustal's
+
+def krustals( graph ):
+    weightTotal = [0]
+    MST = set()
+
+    def union( edge ):
+        e1, e2 = edge
+        p1, p2 = find( e1 ), find( e2 )
+
+        if rank[ p1 ] > rank[ p2 ]:
+            parent[ p2 ] = p1
+        else:
+            parent[ p1 ] = p2
+            if rank[ p1 ] == rank[ p2 ]:
+                rank[ p2 ] += 1
+
+        MST.add( edge )
+        weightTotal[ 0 ] += edge.weight
+
+    def find( vertex ):
+        if vertex != parent[ vertex ]:
+            parent[ vertex ] = find( parent[ vertex ] )
+        return parent[ vertex ]
+
+    rank = { vertex : 0 for vertex in graph.vertices }
+    parent = { vertex : vertex for vertex in graph.vertices }
+
+    for edge in sorted( graph.edges ):
+        vStart, vEnd = edge
+        if find( vStart ) != find( vEnd ):
+            union( edge )
+
+    return weightTotal[ 0 ], MST
+
+class discreteDist:
+    def __init__( self, min, max, values ):
+        self.min = min
+        self.max = max
+        self.values = values
+        self.setPdf()
+        self.setCdf()
+
+    def setPdf( self ):
+        ''' P[ x = i ], calculates the pdf 
+        must be implemented by derived class'''
+        
+    def setCdf( self ):
+        ''' P[ x <= i ], calculates the cdf '''
+        cdf = 0
+        for val in sorted( self.values ):
+            cdf += self.pdf[ val ]
+            self.cdf[ val ] = cdf
+        
+    def getPdf( self, val ):
+        if min <= val <= max:
+            return self.pdf[ val ]
+
+    def getCdf( self, val ):
+        if min <= val <= max:
+            return self.cdf[ val ]
+        else:
+            return 0 if val <= min else 1
+
+    def getExpectation( self ):
+        return sum( val * prob for val, prob in self.pdf.iteritems() )

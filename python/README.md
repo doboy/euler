@@ -1,88 +1,88 @@
 Listing . ...
 
-    problem 001: Solved in 40.4229ms
-    problem 002: Solved in 37.8439ms
-    problem 003: Solved in 40.5221ms
-    problem 004: Solved in 1440.1450ms
-    problem 005: Solved in 48.7230ms
-    problem 006: Solved in 49.6991ms
-    problem 007: Solved in 7327.0011ms
-    problem 008: Solved in 41.9021ms
-    problem 009: Solved in 425.3368ms
+    problem 001: Solved in 42.1369ms
+    problem 002: Solved in 40.6470ms
+    problem 003: Solved in 40.4758ms
+    problem 004: Solved in 1393.9140ms
+    problem 005: Solved in 41.4791ms
+    problem 006: Solved in 40.9060ms
+    problem 007: Solved in 6240.5078ms
+    problem 008: Solved in 104.0270ms
+    problem 009: Solved in 372.6408ms
     problem 010: In Progress
-    problem 011: Solved in 51.6100ms
-    problem 012: Solved in 7066.4310ms
-    problem 013: Solved in 39.4390ms
-    problem 014: Solved in 7487.8559ms
-    problem 015: Solved in 42.6469ms
-    problem 016: Solved in 40.8201ms
-    problem 017: Solved in 45.7339ms
-    problem 018: Solved in 40.4799ms
-    problem 019: Solved in 52.1109ms
-    problem 020: Solved in 45.7399ms
-    problem 021: Solved in 345.2680ms
-    problem 022: Solved in 87.5340ms
-    problem 023: Solved in 6809.0041ms
-    problem 024: Solved in 41.5549ms
-    problem 025: Solved in 46.4511ms
-    problem 026: Solved in 95.9380ms
-    problem 027: Solved in 5333.7820ms
-    problem 028: Solved in 41.6789ms
-    problem 029: Solved in 79.5450ms
-    problem 030: Solved in 2508.6210ms
-    problem 031: Solved in 49.5160ms
-    problem 032: Solved in 842.9570ms
-    problem 033: Solved in 80.5800ms
-    problem 034: Solved in 655.8440ms
-    problem 035: Solved in 542.8791ms
-    problem 036: Solved in 2714.3910ms
+    problem 011: Solved in 49.2918ms
+    problem 012: Solved in 7130.1541ms
+    problem 013: Solved in 39.8040ms
+    problem 014: Solved in 9993.9189ms
+    problem 015: Solved in 112.2749ms
+    problem 016: Solved in 65.7079ms
+    problem 017: Solved in 53.1850ms
+    problem 018: Solved in 46.1609ms
+    problem 019: Solved in 48.2440ms
+    problem 020: Solved in 44.0249ms
+    problem 021: Solved in 294.7400ms
+    problem 022: Solved in 133.9459ms
+    problem 023: Solved in 8290.1170ms
+    problem 024: Solved in 55.6560ms
+    problem 025: Solved in 60.4932ms
+    problem 026: Solved in 104.6860ms
+    problem 027: Solved in 5850.5940ms
+    problem 028: Solved in 41.5878ms
+    problem 029: Solved in 78.2709ms
+    problem 030: Solved in 2689.7252ms
+    problem 031: Solved in 64.6372ms
+    problem 032: Solved in 1195.3330ms
+    problem 033: Solved in 79.6030ms
+    problem 034: Solved in 605.0901ms
+    problem 035: Solved in 593.1132ms
+    problem 036: Solved in 2680.6459ms
     problem 037: In Progress
     problem 038: Unwritten
-    problem 039: Solved in 2393.2581ms
-    problem 040: Solved in 63.5691ms
-    problem 041: Solved in 2965.2970ms
-    problem 042: Solved in 227.1838ms
+    problem 039: Solved in 2207.6440ms
+    problem 040: Solved in 68.8288ms
+    problem 041: Solved in 2426.2021ms
+    problem 042: Solved in 133.8651ms
     problem 043: Wrong Output
     problem 044: Unwritten
-    problem 045: Solved in 841.3639ms
+    problem 045: Solved in 729.0549ms
     problem 046: Unwritten
     problem 047: In Progress
-    problem 048: Solved in 68.5451ms
-    problem 049: Solved in 221.1010ms
+    problem 048: Solved in 50.2660ms
+    problem 049: Solved in 241.7128ms
     problem 050: In Progress
     problem 051: Unwritten
-    problem 052: Solved in 3918.8459ms
-    problem 053: In Progress
+    problem 052: Solved in 3939.1911ms
+    problem 053: Solved in 63.2350ms
     problem 054: In Progress
     problem 055: Unwritten
-    problem 056: Solved in 717.3522ms
+    problem 056: Solved in 666.8110ms
     problem 057: Unwritten
     problem 058: Unwritten
-    problem 059: Unwritten
+    problem 059: Solved in 24415.6950ms
     problem 060: Unsolved
     problem 061: In Progress
-    problem 062: Solved in 158.9401ms
+    problem 062: Solved in 147.4359ms
     problem 063: In Progress
     problem 064: In Progress
     problem 065: In Progress
     problem 066: Unsolved
-    problem 067: Solved in 113.1201ms
+    problem 067: Solved in 59.5129ms
     problem 068: In Progress
-    problem 069: Solved in 57.5159ms
+    problem 069: Solved in 42.7761ms
     problem 070: Unsolved
     problem 071: Wrong Output
     problem 072: Unsolved
     problem 073: Unwritten
-    problem 074: Solved in 19712.8432ms
+    problem 074: Solved in 22738.3752ms
     problem 075: Unsolved
-    problem 076: Solved in 55.0251ms
-    problem 077: Solved in 78.6092ms
+    problem 076: Solved in 59.2442ms
+    problem 077: Solved in 80.0190ms
     problem 078: Unsolved
     problem 079: Wrong Output
     problem 080: Unwritten
-    problem 081: In Progress
-    problem 082: In Progress
-    problem 083: In Progress
+    problem 081: Solved in 291.8479ms
+    problem 082: Solved in 309.6240ms
+    problem 083: Solved in 325.6259ms
     problem 084: Unsolved
     problem 085: Unwritten
     problem 086: Unsolved
@@ -91,38 +91,38 @@ Listing . ...
     problem 089: Unsolved
     problem 090: Unwritten
     problem 091: Unsolved
-    problem 092: Solved in 434709.8379ms
+    problem 092: In Progress
     problem 093: In Progress
     problem 094: Unsolved
     problem 095: Unsolved
     problem 096: Unwritten
-    problem 097: Solved in 39.9849ms
+    problem 097: Solved in 42.3529ms
     problem 098: Wrong Output
-    problem 099: Solved in 58.1350ms
+    problem 099: Solved in 82.5510ms
     problem 100: Unsolved
     problem 101: Unsolved
-    problem 102: Solved in 74.2788ms
+    problem 102: Solved in 103.4460ms
     problem 103: Unsolved
     problem 104: Unwritten
     problem 105: Unsolved
     problem 106: Unsolved
-    problem 107: Unwritten
+    problem 107: Wrong Output
     problem 108: Unsolved
     problem 109: Unsolved
     problem 110: Unsolved
     problem 111: Unsolved
     problem 112: Unwritten
     problem 113: Wrong Output
-    problem 114: Solved in 41.6131ms
-    problem 115: Solved in 232.1770ms
-    problem 116: Solved in 38.5499ms
+    problem 114: Solved in 87.3530ms
+    problem 115: Solved in 498.4820ms
+    problem 116: Solved in 56.5281ms
     problem 117: Wrong Output
     problem 118: Unsolved
     problem 119: Unsolved
-    problem 120: Solved in 38.6620ms
+    problem 120: Solved in 51.2290ms
     problem 121: Unsolved
     problem 122: Unwritten
-    problem 123: Solved in 26691.4601ms
+    problem 123: Solved in 33143.9190ms
     problem 124: Unsolved
     problem 125: Unwritten
     problem 126: Unsolved
@@ -187,10 +187,10 @@ Listing . ...
     problem 185: Unsolved
     problem 186: Unsolved
     problem 187: Unsolved
-    problem 188: Solved in 45.8100ms
+    problem 188: Solved in 61.0430ms
     problem 189: Unsolved
     problem 190: Unsolved
-    problem 191: Solved in 42.3050ms
+    problem 191: Solved in 45.2681ms
     problem 192: Unsolved
     problem 193: Unsolved
     problem 194: Unsolved
@@ -204,7 +204,7 @@ Listing . ...
     problem 202: Unsolved
     problem 203: Unwritten
     problem 204: Unwritten
-    problem 205: Unwritten
+    problem 205: Wrong Output
     problem 206: Unwritten
     problem 207: Unsolved
     problem 208: Unsolved
@@ -363,8 +363,8 @@ Listing . ...
     problem 361: Unsolved
 
     Summary:
-        Solved: 61
+        Solved: 65
         Unsolved: 248
-        Unwritten: 30
-        Wrong Output: 7
-        In Progress: 15
+        Unwritten: 27
+        Wrong Output: 9
+        In Progress: 12
