@@ -1,11 +1,11 @@
-from utils import digitsGen
+from utils import digits
 
 s = set()
 
 def digitsUsed( *numbers ):
     ret = []
     for number in numbers:
-        for digit in digitsGen( number ):
+        for digit in digits( number ):
             if not digit:
                 return []
             else:
@@ -15,7 +15,7 @@ def digitsUsed( *numbers ):
 a = 2
 while True:
     b = 2
-    if 0 in digitsGen( a ):
+    if 0 in digits( a ):
         a += 1
         continue
 
@@ -23,7 +23,7 @@ while True:
         break
 
     while True:
-        if 0 in digitsGen( b ):
+        if 0 in digits( b ):
             b += 1
             continue
 

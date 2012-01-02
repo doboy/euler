@@ -44,5 +44,4 @@ def guess():
                 guesses[ guess ] += 1
     guessHelper( '', 0 )
 guess()
-
 """

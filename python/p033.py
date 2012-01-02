@@ -1,4 +1,4 @@
-from utils import product, digits, reduceFraction, number
+from utils import product, reduceFraction, number, digits
 
 def isCurious( n, d ):
     ans = reduceFraction( n, d )

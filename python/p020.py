@@ -1,3 +1,3 @@
-from utils import digitsGen, product
+from utils import product, digits
 
-print sum( digitsGen( product( xrange( 1, 101 ) ) ) )
+print sum( digits( product( xrange( 1, 101 ) ) ) )

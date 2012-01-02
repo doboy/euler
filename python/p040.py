@@ -1,4 +1,4 @@
-from utils import digits, product
+from utils import product, digits
 
 def d( n ):
     d = 1

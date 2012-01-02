@@ -1,3 +1,3 @@
-from utils import digitsGen
+from utils import digits
 
-print sum( digitsGen( 2**1000 ) )
+print sum( digits( 2**1000 ) )

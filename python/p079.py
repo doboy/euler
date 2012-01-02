@@ -1,13 +1,12 @@
-from utils import baseGen, digitsGen
+from utils import baseGen, digits
 
 numbersUsed = set()
 passCodes = set()
 
-
 def isGood( num, code ):
-    numTup = tuple( digitsGen( num ) )
+    numTup = map( int, str( num ) )
     numIndex = len( numTup )
-    for digit in reversed( tuple( digitsGen( code ) ) ):
+    for digit in reversed( digits( code ) ):
         while numIndex:
             if digit == code:
                 numIndex -= 1
@@ -30,3 +29,4 @@ for num in baseGen( goods=tuple( numbersUsed ) ):
     else:
         print num
         break
+# Urgent

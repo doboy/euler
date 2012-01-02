@@ -1,24 +1,6 @@
-# Graph
-  # MST
-  # Clique
-  # TSP
-  # Independent Set
-  # Vertex Cover
-  # Max-Flow, Min-Cut
-  # 3D Matching
-  # Coloring
-  # Hamitonian Cycle
-  # Domnianting set
-  # Exact Cover
-
-# Priority Queue
-  # Array 
-  # Binary Heap
-  # d-ary Heap
-
 from operator import mul
 from itertools import count as irange
-from math import sqrt, log10
+from math import sqrt, log10, acos
 
 def isPal( s ):
     for i in xrange( len( s )/2 ):
@@ -26,7 +8,7 @@ def isPal( s ):
             return False
     return True
 
-# 5
+"5"
 def factors( n ):
     i, ret = 2, {}
     while n > 1:
@@ -42,7 +24,7 @@ def product( iterable ):
         ret *= i
     return ret
 
-# 7, 27
+"7, 27"
 def primeGen( end=float("inf"), start=0 ):
     yield 2; yield 3
     primesSoFar = set()
@@ -61,7 +43,7 @@ def primeGen( end=float("inf"), start=0 ):
         i += adder
         adder = 6 - adder
 
-# 9
+"9"
 def isSquare( n ):
     if n == 1: return True
     x = n // 2
@@ -74,7 +56,7 @@ def isSquare( n ):
     return True
 
 def triplesGen():
-    # a < b < c
+    " a < b < c"
     for c in irange( 2 ):
         for b in xrange( c - 1, c // 2 - 1, -1 ):
             aSquare = c ** 2 - b ** 2
@@ -82,7 +64,7 @@ def triplesGen():
                 a = int( aSquare ** .5 )
                 yield a, b, c
 
-# 12, 45
+" 12, 45 "
 def triangleGen():
     i = 1
     while True:
@@ -94,6 +76,9 @@ def pentagonGen():
     while True:
         yield i * ( 3 * i - 1 ) / 2
         i += 1
+
+def pentagon( n ):
+    return i * ( 3 * i - 1 ) / 2
 
 def hexagonGen():
     i = 1
@@ -111,21 +96,11 @@ def divisors( n, proper=False ):
         ret.add( n ** .5 )
     return frozenset( ret )
 
-# 17
+" 17 "
 def digit( n, i ):
     return n // 10 ** i % 10
 
-def digitsGen( n ):
-    while n:
-        yield n % 10
-        n //= 10
-
-def digits( n ):
-    ret = ()
-    while n:
-        ret = ( n % 10, ) + ret
-        n //= 10
-    return ret
+digits = lambda n : tuple( map( int, str( n ) ) )
 
 def number( seq ):
     r = 0
@@ -133,7 +108,7 @@ def number( seq ):
         r = r * 10 + x
     return r
 
-# 25
+" 25"
 def fibGen():
     a = 1
     b = 1
@@ -144,8 +119,8 @@ def fibGen():
         a = t
         yield b
 
-# 27
-# AKS primality test
+" 27"
+" AKS primality test"
 def isPrime( n ):
     if n <= 1:
         return False
@@ -155,11 +130,11 @@ def isPrime( n ):
     return not isSquare( n )
 
 def isPrimeAKS( n ):
-    # STEP 0
+    " STEP 0"
     if n == 1:
         return False
 
-    # STEP 1
+    " STEP 1"
     a = 2
     while a ** 2 <= n:
         b = 2
@@ -184,7 +159,7 @@ def isPrimeAKS( n ):
     return True
 
 def ord( n, a ):
-    # a ** k = 1 mod n
+    " a ** k = 1 mod n"
     for k in xrange( 1, n + 1 ):
         if a ** k % n == 1:
             return k
@@ -201,7 +176,7 @@ def gcd( a, b ):
         a, b = b, a % b
     return a
 
-# 31
+" 31"
 def change( n, coins ):
     ''' ways[ a, b ] means there are that many ways to get a amount using
     coins [ 0 .. b ) '''
@@ -214,35 +189,35 @@ def change( n, coins ):
                 ( ways[ i, c - 1 ] if c else 0 )
     return ways[ n, len( coins ) - 1 ]
 
-# 45
+" 45"
 def argmin( *seq ):
     return min( ( ( i, x ) for i, x in enumerate( seq ) ), key=lambda y: y[1] )[ 0 ]
 
-# 52
+" 52"
 def equals( *seq ):
     for x in seq:
         if seq[ 0 ] != x:
             return False
     return True
     
-# 19
+" 19"
 def dateGen( start, end, delta ):
     n = start
     while n <= end:
         yield n.day
         n += delta
-# 24
+" 24"
 def fact( n ):
     r = 1
     for i in xrange( 1, n + 1 ):
         r *= i
     return r
 
-# 63
+" 63"
 def count( seq ):
     return sum( 1 for x in seq )
 
-# 83
+" 83"
 class Vertex:
     pass
 
@@ -264,11 +239,11 @@ class Graph:
                 pass
 
 
-# 114, 115, 116
+"114, 115, 116"
 def fill_count( n, m ):
-    # n, b --> N
-    # n blocks used,
-    # b ending in red
+    """ n, b --> N
+     n blocks used,
+      b ending in red"""
 
     ways = { ( 0, True ) : 0,
              ( 0, False ) : 1 }
@@ -281,7 +256,7 @@ def fill_count( n, m ):
 
     return ways[ n, True ] + ways[ n, False ]
 
-# 188
+" 188"
 def hyperexpo( a, b, m ):
     r = a
     while b:
@@ -289,7 +264,7 @@ def hyperexpo( a, b, m ):
         b -= 1
     return r
 
-# 36
+" 36"
 def isBinaryPal( n ):
     temp = n
     reverse = 0
@@ -308,20 +283,20 @@ def isDecimalPal( n ):
         temp //= 10
     return n == reverse
         
-# 22, 42
+" 22, 42"
 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 points = { chars[ i ] : i + 1 for i in xrange( len( chars ) ) }
 
 def score( wd ):
     return sum( map( points.get, wd ) )
     
-# 42
+" 42"
 
 def isTriangle( n ):
     s = int( sqrt( n * 2 ) )
     return 2 * n == s * ( s + 1 )
 
-# 68
+" 68"
 
 class modList( list ):
 
@@ -335,7 +310,7 @@ class modList( list ):
     def __setitem__( self, i, x ):
         return __setitem__( self, i, x )
 
-# Abstract class
+" Abstract class"
 class CSP:
     
     def __init__( self ):
@@ -353,50 +328,7 @@ class CSP:
     def solve( self ):
         pass
 
-class magic3gon( CSP ):
-    
-    def __init__( self ):
-        # self.positions = { s, i for s in ( "in", "out" ) for i in xrange( 3 ) }
-        self.next = "in", 0
-        self.moves = []
-        self.canUse = set( xrange( 1, 7 ) )
-        self.constraints = [ lambda : self.positions[ "in", 0 ] < 8 ]
-
-    def getPositions( self ):
-        ''' Even is inside, Odd is outside
-        -2, 0, 1 share constraint -1,
-        0, 2 , 3 share constraint 0,
-        2, 4, 5, share constraint 1,
-        In general i, i + 2, i + 3 ( mod N ) share constraint i/2 mod N/2,
-        Conversely position i has contraints i/2, '''
-        pass
-        
-    def getConstraints( self ):
-        '''Conversly constraint i says ii + ii + 2 + ii + 3 == X '''
-        # return modList( 3, [ lambda : not self.positions[ i * 2 ] or not self.positions[ i * 2 + 2 ] or not self.positions[ i * 2 + 3 ] or 
-        #                      self.positions[ i * 2 ] + self.positions[ i * 2 + 2 ] + self.positions[ i * 2 + 3 ] == self.X for i in xrange( 3 ) ] )
-        pass
-
-
-    def getPossibleMoves( self ):
-        possibleMoves = set()
-        for x in self.canUse:
-            self.positions[ self.next ] = x
-            if isGood( self.next ):
-                possibleMoves.add( x )
-            self.positions[ self.next ] = None
-
-    @staticmethod
-    def opposite( wd ):
-        return "in" if word is "out" else "out"
-
-    def setNextMove( self ):
-        self.next = opposite( self.next[ 1 ] ), ( self.next[ 1 ] + 1 ) % 3
-
-    def setPrevMove( self ):
-        self.next = opposite( self.next[ 1 ] ), ( self.next[ 1 ] - 1 ) % 3
-
-# 98
+" 98"
 def mapReduce( elements, 
                mapper,
                reducer=lambda tup, el: tup + ( el, ), 
@@ -415,12 +347,12 @@ def mapReduce( elements,
         for k, v in mappee.iteritems():
             reducee[ k ] = reduce( reducer, v, base )
 
-    # is filter done on the keys or values? I assume keys
-    # makes sense for problem 98
+    """ is filter done on the keys or values? I assume keys
+     makes sense for problem 98"""
     
     return reducee
 
-# 35
+" 35"
 def rotated( n, digits ):
     return n // 10 + ( n % 10 ) * 10 ** digits
 
@@ -446,14 +378,15 @@ def baseGen( goods, start=0, end=float("inf") ):
         t = transform( i )
 
 
-# 33
+" 33"
 def reduceFraction( n, d ):
     g = gcd( n, d )
     return n / g, d / g
 
-# 38
+" 38"
 def panGen( n, z=False ):
-    pass
+    for x in lexiPermGen( vals=xrange(1,10), start=0, end=None ):
+        yield x
 
 def lexiPerm( n, s ):
     y = sorted( s )
@@ -477,7 +410,7 @@ def lexiPermGen( vals, start=0, end=None ):
         yield int( lexiPerm( s, vals ) )
         s += 1
 
-# 81, 82, 83
+" 81, 82, 83"
 import heapq
 
 class graphSearch( object ):
@@ -598,7 +531,10 @@ def choose( n, r ):
     return product( xrange( n - r + 1, n + 1 ) ) \
         / product( xrange( 1, r + 1 ) )
 
-# 57
+def balls_and_bins( balls, bins ):
+    return choose( balls + bins - 1, balls )
+
+" 57"
 class fraction:
 
     def __init__( self, n, d=1 ):
@@ -614,8 +550,7 @@ class fraction:
         return fraction( self.n * self.d / l + other.n * other.d / l,
                          l )
 
-# krustal's
-
+" krustal's"
 def krustals( graph ):
     weightTotal = [0]
     MST = set()
@@ -650,11 +585,13 @@ def krustals( graph ):
     return weightTotal[ 0 ], MST
 
 class discreteDist:
-    def __init__( self, min, max, values ):
-        self.min = min
-        self.max = max
-        self.values = values
-        self.setPdf()
+    def __init__( self, **pdfargs ):
+        self.pdf = {}
+        self.cdf = {}
+        self.setDist( **pdfargs )
+
+    def setDist( self, **pdfargs ):
+        self.setPdf( **pdfargs )
         self.setCdf()
 
     def setPdf( self ):
@@ -664,19 +601,47 @@ class discreteDist:
     def setCdf( self ):
         ''' P[ x <= i ], calculates the cdf '''
         cdf = 0
-        for val in sorted( self.values ):
+        for val in sorted( self.pdf ):
             cdf += self.pdf[ val ]
             self.cdf[ val ] = cdf
         
     def getPdf( self, val ):
-        if min <= val <= max:
-            return self.pdf[ val ]
+        return self.pdf.get( val, 0 )
 
     def getCdf( self, val ):
-        if min <= val <= max:
+        if min( self.pdf ) <= val <= max( self.pdf ):
             return self.cdf[ val ]
         else:
-            return 0 if val <= min else 1
+            return 0 if val <= min( self.pdf ) else 1
 
     def getExpectation( self ):
         return sum( val * prob for val, prob in self.pdf.iteritems() )
+
+def angleBetween( v1, v2 ):
+    return acos( dotProduct( v1, v2 ) / ( mag( v1 ) * mag( v2 ) ) )
+
+def dotProduct( v1, v2 ):
+    return sum( map( mul, v1, v2 ) )
+
+def mag( v1 ):
+    return sum( map( lambda x : x ** 2, v1 ) )**.5
+
+gr = ( 1 + sqrt( 5 ) ) / 2
+ph = ( 1 - sqrt( 5 ) ) / 2
+
+def fib( n ):
+    print n
+    return int( ( gr ** n - ph ** n ) / sqrt( 5 ) )
+
+def isPan( x ):
+    return len( set( str( x ) ) ) == 9 and "0" not in str( x )
+
+class memoize:
+    def __init__( self, fn ):
+        self.fn = fn
+        self.hash = {}
+
+    def __call__( self, *args ):
+        if args not in self.hash:
+            self.hash[ args ] = self.fn( *args )
+        return self.hash[ args ]

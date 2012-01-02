@@ -1,12 +1,10 @@
-# Tags: Dynamic Programming
-
-# ( d, a, l ) --> ways
-# days, current absents, Late Already
-
 ways = {}
+" days, current absents, late already? -> ways "
+
 for a in xrange( 3 ):
     for l in ( True, False ):
         ways[ 0, a, l ] = 0
+
 ways[ 0, 0, False ] = 1
 
 for d in xrange( 1, 30 + 1 ):

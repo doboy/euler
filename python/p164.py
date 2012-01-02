@@ -1,24 +1,16 @@
-# Tags: Dynamic Programming
+from utils import memoize
 
-ways = {}
-# digit, l, ll, z
+@memoize
+def ways( d, mid, old ):
+    """ Currently on the dth digit how many ways is there to do it if
+    the two previous elements are in lastlast and last. Assume d >= 2 """
+    if d <= 2:
+        return 1 if ( mid and mid + old <= 9 ) else 0
+    else:
+        return sum( ways( d - 1, new, mid ) 
+                    for new in xrange( 10 ) 
+                    if new + mid + old <= 9 )
 
-for l in xrange( 10 ):
-    for ll in xrange( 10 ):
-        for b in True, False:
-            ways[ 0, l, ll, b ] = 0
-
-ways[ 0, 0, 0, True ] = 1
-
-for d in xrange( 1, 20 + 1):
-    for l in xrange( 10 ):
-        for ll in xrange( 10 ):
-            ways[ d, l, ll, False ] = sum( ways[ d, ll, lll ] for lll in xrange( 1, 10 )
-                                           if l + ll + lll < 9 )
-            ways[ d, l, ll, True ] = sum( ways[ d, ll, lll ] for lll in ( 0, )
-                                          if l + ll + lll < 9 )
-            
-
-print sum( ways[ 20, l, ll, False ] 
-           for l in xrange( 10 )
-           for ll in xrange( 10 ) )
+print sum( ways( 20, mid, old ) 
+           for mid in xrange( 10 ) 
+           for old in xrange( 10 ) )

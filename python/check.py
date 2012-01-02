@@ -1,52 +1,65 @@
 from ast import literal_eval
 from subprocess import check_output, CalledProcessError
 import sys, time, compileall
+import os.path
 
+Summary = {}
 sys.stderr = sys.stdout
-# Unsolved, Solved
-# Wrong Output, In Progress
+compileall.compile_dir( "." )
 
-Summary = { "Solved": 0,
-            "Unsolved": 0,
-            "In Progress": 0,
-            "Wrong Output" : 0,
-            "Unwritten" : 0 }
 
 def check( prob, answer ):
-    if not answer:
-        return "Unsolved",
+    if not answer: 
+        return "Unsolved", None
+    elif not os.path.isfile( "p%s.py" % prob ):
+        return "Unwritten", None
     else:
-        try:
-            start = time.time()
-            output = check_output( ["python", "p%s.pyc" % prob] )
-            if not output:
-                return "In Progress",
-            else:
-                output_val = literal_eval( output )
-                if answer == output_val:
-                    return "Solved", ( time.time() - start ) * 1000
-                else:
-                    return "Wrong Output",
-        except SyntaxError:
-            return "Wrong Output",
-        except CalledProcessError:
-            return "Unwritten",
+      try:
+        start = time.time()
+        output = check_output([ "python", "p%s.pyc" % prob ])
+        end = time.time()
 
-compileall.compile_dir( "." )
-print
+        if not output:
+            return "In Progress", None
+        elif answer == literal_eval( output ):
+            # Summary[ "totalTime" ] = Summary.get( "totalTime", 0 ) + end - start
+            return "Solved", end - start
+        else:
+            return "Wrong Output", None
 
-for line in open( "../txt/check" ):
-    prob, answer = line.split()
-    result = check( prob, literal_eval( answer ) )
-    outcome = result[ 0 ]
-    print "    problem %s: %s" % ( prob, outcome ),
+      except:
+          return "Error", None
+
+if len( sys.argv ) > 1:
+    _, prob, answer = sys.argv
+    outcome, duration = check( prob, literal_eval( answer ) )
+    
+    output = "    problem %s: %s" % ( prob, outcome )
+
     if outcome == "Solved":
-        print "in %0.4fms" % result[ 1 ]
-    else:
-        print
-    Summary[ outcome ] += 1
+        output += " in %0.2fms" % ( duration * 1000 )
 
-print
-print "    Summary:"
-for k, v in Summary.items():
-    print "        %s: %s" % ( k, v )
+    print output
+
+else:    
+    README = open( "README.md", "w" )
+    for line in open( "../txt/check" ):
+        prob, answer = line.split()
+        outcome, duration = check( prob, literal_eval( answer ) )
+    
+        output = "    problem %s: %s" % ( prob, outcome )
+
+        if outcome == "Solved":
+            output += " in %0.2fms" % ( duration * 1000 )
+
+        for out in ( README, sys.stdout ):
+            print >>out, output
+
+        Summary[ outcome ] = Summary.get( outcome, 0 ) + 1
+
+    summary = "    Summary:\n"
+    for k, v in Summary.items():
+        summary += "      %s: %s\n" % ( k, v )
+
+    for out in ( README, sys.stdout ):
+        print >>out, summary

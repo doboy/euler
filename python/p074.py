@@ -1,10 +1,10 @@
-from utils import digitsGen, fact
+from utils import fact, digits
 
 lengths = {}
 cycles = set()
 
 def nextVal( n ):
-    return sum( map( fact, digitsGen( n ) ) )
+    return sum( map( fact, digits( n ) ) )
 
 def length( n ):
     if n in lengths:
