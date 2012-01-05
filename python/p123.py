@@ -1,12 +1,12 @@
 from utils import primeGen
 
 gen = primeGen()
-i, primeI = 1, gen.next()
+i, primeI = 1, next( gen )
 
-while 2 * primeI * i < 10000000000:
-    i += 2; gen.next()
-    primeI = gen.next()
-
+while 2 * primeI * i < 10 ** 9:
+    next( gen )
+    primeI = next( gen )
+    i += 2
 print i
 
 # RELOOK

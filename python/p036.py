@@ -6,4 +6,3 @@ def palindromGen():
             yield x
 
 print sum( palindromGen() )
-# RELOOK

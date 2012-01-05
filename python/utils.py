@@ -25,6 +25,7 @@ def product( iterable ):
     return ret
 
 "7, 27"
+# RELOOK
 def primeGen( end=float("inf"), start=0 ):
     yield 2; yield 3
     primesSoFar = set()
@@ -239,7 +240,7 @@ class Graph:
                 pass
 
 
-"114, 115, 116"
+"114, 115 "
 def fill_count( n, m ):
     """ n, b --> N
      n blocks used,
@@ -645,3 +646,8 @@ class memoize:
         if args not in self.hash:
             self.hash[ args ] = self.fn( *args )
         return self.hash[ args ]
+
+
+isOdd = lambda x : x % 2
+isEven = lambda x : not x % 2
+

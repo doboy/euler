@@ -9,30 +9,29 @@ compileall.compile_dir( "." )
 
 
 def check( prob, answer ):
-    if not answer: 
+    if answer.strip() == "None":
         return "Unsolved", None
     elif not os.path.isfile( "p%s.py" % prob ):
         return "Unwritten", None
     else:
-      try:
-        start = time.time()
-        output = check_output([ "python", "p%s.pyc" % prob ])
-        end = time.time()
+        try:
+            start = time.time()
+            output = check_output([ "python", "p%s.pyc" % prob ])
+            end = time.time()
 
-        if not output:
-            return "In Progress", None
-        elif answer == literal_eval( output ):
-            # Summary[ "totalTime" ] = Summary.get( "totalTime", 0 ) + end - start
-            return "Solved", end - start
-        else:
-            return "Wrong Output", None
+            if not output:
+                return "In Progress", None
+            elif answer.strip() == output.strip():
+                return "Solved", end - start
+            else:
+                return "Wrong Output", None
 
-      except:
-          return "Error", None
+        except:
+            return "Error", None
 
 if len( sys.argv ) > 1:
     _, prob, answer = sys.argv
-    outcome, duration = check( prob, literal_eval( answer ) )
+    outcome, duration = check( prob, answer )
     
     output = "    problem %s: %s" % ( prob, outcome )
 
@@ -45,7 +44,7 @@ else:
     README = open( "README.md", "w" )
     for line in open( "../txt/check" ):
         prob, answer = line.split()
-        outcome, duration = check( prob, literal_eval( answer ) )
+        outcome, duration = check( prob, answer )
     
         output = "    problem %s: %s" % ( prob, outcome )
 

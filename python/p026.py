@@ -32,3 +32,5 @@ def cycleLen( divisor ):
     return count
 
 print max( ( cycleLen( i ), i ) for i in primeGen( 1000 ) )[ 1 ]
+
+#RELOOK

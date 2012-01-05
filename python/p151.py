@@ -1,45 +1,62 @@
 from utils import discreteDist
 from copy import copy
 
+# # # # # # # # # # 
+# 0 #   #         #
+# # # 1 #         #
+# 0 #   #         #
+# # # # #    3    #
+#       #         #
+#   2   #         #
+#       #         #
+# # # # # # # # # #
+
 def taked_out( env, sheet ):
-    assert env.sheets[ sheet ]
-    new_sheets = copy( env.sheets )
-    new_sheets[ sheet ] -= 1
-    if not new_sheets[ sheet ]:
-        del new_sheets[ sheet ]
-    return envelope( new_sheets )
+    new_env = copy( env )
+    new_env[ sheet ] -= 1
+    for sheet in xrange( sheet ):
+        new_env[ sheet ] += 1
+    return new_env
 
 class envelope:
     def __init__( self, sheets=None ):
-        self.sheets = sheets if sheets is not None else \
-            { i : 1 for i in xrange( 2, 5 + 1 ) }
+        self.sheets = sheets if sheets is not None else { 4 : 1 }
         self.totalSheets = sum( v for k, v in self.sheets.items() )
 
     def sheetProb( self, sheet ):
-        return float( self.sheets[ sheet ] ) / self.totalSheets
+        return float( self[ sheet ] ) / self.totalSheets
+
+    def __getitem__( self, sheet ):
+        return self.sheets[ sheet ] if sheet in self.sheets else 0
+
+    def __setitem__( self, sheet, val ):
+        if not val:
+            del self.sheets[ sheet ]
+        else:
+            self.sheets[ sheet ] = val
+        self.totalSheets = sum( v for k, v in self.sheets.items() )
 
     def __len__( self ):
         return self.totalSheets
 
-    def __str__( self ):
-        return str( ( self.totalSheets, self.sheets ) )
+    def __copy__( self ):
+        return envelope( copy( self.sheets ) )
 
 class envelopeDist( discreteDist ):
     def setPdf( self ):
-        def explore( currentEnv, currentProb, currentVal ):
-            if len( currentEnv ) == 1:
-                yield currentProb, currentVal
-            for sheet in currentEnv.sheets:
-                nextVal = currentVal + 1 if sheet is 5 else 0
-                for res in explore( taked_out( currentEnv, sheet ), 
-                         currentProb * currentEnv.sheetProb( sheet ),
-                         nextVal ):
-                    yield res
+        fringe = [ ( envelope(), 1, 0 ) ]
+        while fringe:
+            node = env, prob, val = fringe.pop()
 
-        for prob, val in explore( envelope(), 1, 0 ):
-            print prob, val
-            raw_input()
-            self.pdf[ val ] = self.pdf.get( val, 0 ) + prob
+            if not env.sheets:
+                self.pdf[ val - 2 ] = self.pdf.get( val - 2, 0 ) + prob
+
+            else:
+                for sheet in env.sheets:
+                    next_val = val + ( len( env ) == 1 )
+                    next_prob = prob * env.sheetProb( sheet )
+                    fringe.append( 
+                        ( taked_out( env, sheet ), next_prob, next_val ) )
 
 e = envelopeDist()
-print e.getExpectation()
+print round( e.getExpectation(), 6 )

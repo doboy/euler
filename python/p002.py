@@ -1,6 +1,8 @@
-t, a, b  = 0, 0, 1
-while b < 4 * 10 ** 6 :
-    if not b % 2:
-        t += b
-    a, b = b, a + b
-print t
+def fibGen( n ):
+    a, b = 0, 1
+    yield 0
+    while b < n:
+        yield b
+        a, b = b, a + b
+
+print sum( x for x in fibGen( 4 * 10 ** 6 ) if not x % 2 )
