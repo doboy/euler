@@ -19,11 +19,9 @@ def curiousGen():
             if d % 10 and isCurious( n, d ):
                 yield n, d
 
-nt = 1
-dt = 1
+nt, dt = 1, 1
 for n, d in curiousGen():
     nn, dd = reduceFraction( n, d )
-    nt *= nn
-    dt *= dd
+    nt, dt = nt * nn, dt * dd
 
 print reduceFraction( nt, dt )[ 1 ]

@@ -1,4 +1,4 @@
-from utils import primeGen, isPrime, isSquare, isOdd, isEven
+from utils import primeGen, isPrime, isSquare, isEven
 
 def Goldbach( c ):
     for p in primeGen( c ):
@@ -10,4 +10,3 @@ while isEven( c ) or isPrime( c ) or Goldbach( c ):
     c += 1
 
 print c
-

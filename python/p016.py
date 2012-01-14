@@ -1,3 +1,3 @@
 from utils import digits
 
-print sum( digits( 2**1000 ) )
+print sum( digits( 2 ** 1000 ) )

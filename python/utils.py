@@ -1,6 +1,17 @@
 from operator import mul
 from itertools import count as irange
 from math import sqrt, log10, acos
+from copy import deepcopy
+
+class memoize:
+    def __init__( self, fn ):
+        self.fn = fn
+        self.hash = {}
+
+    def __call__( self, *args ):
+        if args not in self.hash:
+            self.hash[ args ] = self.fn( *args )
+        return self.hash[ args ]
 
 def isPal( s ):
     for i in xrange( len( s )/2 ):
@@ -110,15 +121,11 @@ def number( seq ):
     return r
 
 " 25"
-def fibGen():
-    a = 1
-    b = 1
-    yield 1; yield 1
-    while True:
-        t = b
-        b += a
-        a = t
+def fibGen( n=float("inf") ):
+    a, b = 0, 1
+    while b < n:
         yield b
+        a, b = b, a + b
 
 " 27"
 " AKS primality test"
@@ -201,12 +208,6 @@ def equals( *seq ):
             return False
     return True
     
-" 19"
-def dateGen( start, end, delta ):
-    n = start
-    while n <= end:
-        yield n.day
-        n += delta
 " 24"
 def fact( n ):
     r = 1
@@ -526,11 +527,29 @@ def orderC( n, r ):
     ''' return the number of zeros of n choose r '''
     return order( n ) - order( n - r ) - order( r )
 
-
-def choose( n, r ):
+@memoize
+def choose( n, r=None ):
     '''n choose r = n! / r! * ( n-r )! <==> n * n-1 * .. * n-r+1 / r!'''
-    return product( xrange( n - r + 1, n + 1 ) ) \
-        / product( xrange( 1, r + 1 ) )
+    if r is not None:
+        return product( xrange( n - r + 1, n + 1 ) ) \
+            / product( xrange( 1, r + 1 ) )
+    else:
+        ret = [ 1 ]
+        for _ in xrange( n ):
+            ret = [ 1 ] + [ ret[ j ] + ret[ j + 1 ] for j in xrange( len( ret ) - 1 ) ] + [ 1 ]
+        return ret
+
+@memoize
+def choose1( n, r ):
+    if r < 0 or r > n:
+        return 0
+    elif r == 0 or r == n:
+        return 1
+    else:
+        return choose1( n - 1, r - 1 ) + choose1( n - 1, r )
+
+def pick( n, r ):
+    return product( xrange( n - r + 1, n + 1 ) )
 
 def balls_and_bins( balls, bins ):
     return choose( balls + bins - 1, balls )
@@ -637,17 +656,39 @@ def fib( n ):
 def isPan( x ):
     return len( set( str( x ) ) ) == 9 and "0" not in str( x )
 
-class memoize:
-    def __init__( self, fn ):
-        self.fn = fn
-        self.hash = {}
-
-    def __call__( self, *args ):
-        if args not in self.hash:
-            self.hash[ args ] = self.fn( *args )
-        return self.hash[ args ]
-
-
 isOdd = lambda x : x % 2
 isEven = lambda x : not x % 2
 
+" Linear Algebra "
+def determinant( M ):
+    """ Assumes is a square matrix """
+    if len( M ) == 1:
+        return M[ 0 ][ 0]
+    elif len( M ) == 2:
+        return M[ 0 ][ 0 ] * M[ 1 ][ 1 ] - M[ 1 ][ 0 ] * M[ 0 ][ 1 ]
+    else:
+        j = 0
+        return sum( (-1 ) ** i * M[ i ][ j ] * determinant( ignored( M, i, j ) ) for
+                    i in xrange( len( M ) ) )
+
+def replaced( M, vec, col ):
+    ret = deepcopy( M )
+    for row in xrange( len( M ) ):
+        ret[ row ][ col ] = vec[ row ]
+    return ret
+
+def ignored( M, i, j ):
+    ret = []
+    for _i in xrange( len( M ) ):
+        row = []
+        if _i == i:
+            continue
+        for _j in xrange( len( M[ _i ] ) ):
+            if _j == j:
+                continue
+            row.append( M[ _i ][ _j ] )
+        ret.append( row )
+    return ret
+
+
+    

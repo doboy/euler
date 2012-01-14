@@ -11,10 +11,12 @@ def decode( values, decoder ):
         ret += chr( decodee ^ val )
     return ret
 
+a, z = ord( 'a' ), ord( 'z' )
+
 def codeGen():
-    for l1 in xrange( ord( 'a' ), ord( 'z' ) + 1 ):
-        for l2 in xrange( ord( 'a' ), ord( 'z' ) + 1 ):
-            for l3 in xrange( ord( 'a' ), ord( 'z' ) + 1 ):
+    for l1 in xrange( a, z + 1 ):
+        for l2 in xrange( a, z + 1 ):
+            for l3 in xrange( a, z + 1 ):
                 code = decode( values, decoder=( l1, l2, l3 ) )
                 yield language( code ), sum( map( ord, code ) )
 

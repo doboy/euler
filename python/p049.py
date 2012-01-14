@@ -10,7 +10,6 @@ for prime in primeGen( start=1000, end=10000 ):
     s[ d ] += ( prime, )
 
 for d, ps in s.iteritems():
-    # print ps
     if len( ps ) >= 3:
         l = len( ps )
         for i in xrange( l ):

@@ -10,8 +10,7 @@ for x in xrange( 1, MAX ):
         for y in a:
             if x + y > MAX:
                 break
-            else:
-                c.remove( x + y ) if x + y in c \
-                    else None
+            elif x + y in c:
+                c.remove( x + y )
 
 print sum( c )

@@ -7,7 +7,7 @@ for word in literal_eval( open( "../txt/p098" ).read() ):
     num = number( map( score, word ) )
     print num, word
     if word == "CARE" or word == "RACE":
-        raw_input()
+        pass
     if isSquare( number( map( score, word ) ) ):
         sorted_word = tuple( sorted( word ) )
         if sorted_word not in words:

@@ -48,8 +48,8 @@ else:
     
         output = "    problem %s: %s" % ( prob, outcome )
 
-        if outcome == "Solved":
-            output += " in %0.2fms" % ( duration * 1000 )
+        #if outcome == "Solved":
+        #    output += " in %0.2fms" % ( duration * 1000 )
 
         for out in ( README, sys.stdout ):
             print >>out, output

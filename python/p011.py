@@ -14,11 +14,9 @@ def productGen( matrix ):
             if H:
                 yield product( matrix[ i + k ][ j ] for k in xrange( 4 ) )
             if H and V:
-                yield product( matrix[ i + k ][ j + k ] 
-                               for k in xrange( 4 ) )
+                yield product( matrix[ i + k ][ j + k ] for k in xrange( 4 ) )
             if Hb and V:
-                yield product( matrix[ i - k ][ j + k ] 
-                               for k in xrange( 4 ) )
+                yield product( matrix[ i - k ][ j + k ] for k in xrange( 4 ) )
 
 print max( productGen( matrix ) )
 

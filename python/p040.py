@@ -17,4 +17,3 @@ def d( n ):
             return digit
 
 print product( d( 10 ** e ) for e in xrange( 7 ) )
-

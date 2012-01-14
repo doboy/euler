@@ -10,4 +10,4 @@ for triple in triplesGen():
     if s <= 1000:
         perm[ s ] = perm.get( s, 0 ) + 1
 
-print max( perm.items(), key=lambda ( k, v ): v )[ 0 ]
+print max( perm.items(), key=lambda ( k, v ) : v )[ 0 ]
