@@ -3,7 +3,7 @@ from ast import literal_eval
 """
 pairs = set()
 
-for word in literal_eval( open( "../txt/p098" ).read() ):
+for word in literal_eval( open( "txt/p098" ).read() ):
     num = number( map( score, word ) )
     print num, word
     if word == "CARE" or word == "RACE":

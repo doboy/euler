@@ -4,6 +4,7 @@ include
 lib
 .Python
 *.pyc
+*.pycache
 *~
 #~#
 .DS_Store

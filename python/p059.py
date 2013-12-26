@@ -1,4 +1,4 @@
-values = [ int( val ) for val in open( "../txt/p059" ).read().split( "," ) ]
+values = [ int( val ) for val in open( "txt/p059" ).read().split( "," ) ]
 
 def language( code ):
     ''' returns a measurement of how intelligent the language is '''

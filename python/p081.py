@@ -3,7 +3,7 @@ from ast import literal_eval
 
 dist = {}
 
-for i, line in enumerate( open( "../txt/p081" ) ):
+for i, line in enumerate( open( "txt/p081" ) ):
     for j, number in enumerate( line.split( ',' ) ):
         dist[ i, j ] = literal_eval( number )
 

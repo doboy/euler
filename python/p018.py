@@ -10,7 +10,7 @@ def max_tree_sum( file ):
         s = nextS
         t.pop()
     return s[ 0 ]
-    
+
 if __name__ == "__main__":
-    print max_tree_sum( "../txt/p018" )
+    print max_tree_sum( "txt/p018" )
 

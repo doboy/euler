@@ -4,7 +4,7 @@ from ast import literal_eval
 distanceTable = { }
 totalDist = 0
 
-for i, line in enumerate( open( "../txt/p107" ) ):
+for i, line in enumerate( open( "txt/p107" ) ):
     for j, num in enumerate( line.split( "," ) ):
         if '-' in num:
             continue
@@ -32,6 +32,6 @@ prim = primSearch( fringe=fringe,
 prim.search()
 
 
-print totalDist
-print sum( distFn( k, v ) for k, v in prim.prev.iteritems() if v )
-print totalDist - sum( distFn( k, v ) for k, v in prim.prev.iteritems() if v )
+# print totalDist
+# print sum( distFn( k, v ) for k, v in prim.prev.iteritems() if v )
+# print totalDist - sum( distFn( k, v ) for k, v in prim.prev.iteritems() if v )

@@ -17,7 +17,7 @@ def isGood( num, code ):
     else:
         return True
 
-for line in open( "../txt/p079" ):
+for line in open( "txt/p079" ):
     passCodes.add( eval( line ) )
     for number in line[:3]:
         numbersUsed.add( eval( number ) )
