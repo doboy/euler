@@ -1,7 +1,8 @@
 hash = {}
 
 def ways( B, W, b, w, t ):
-    print B, W, b, w, t
+    import sys
+    print >>sys.stderr, ( B, W, b, w, t )
     if ( B, W, b, w, t ) in hash:
         return hash[ B, W, b, w, t ]
 

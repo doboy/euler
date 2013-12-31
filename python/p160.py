@@ -13,8 +13,9 @@ n = 1
 e = 1000000000000
 e = 20
 for i in xrange( 1, e + 1 ):
-    print i
-    n, fcount = func( i, n ) 
+    import sys
+    print >>sys.stderr, i
+    n, fcount = func( i, n )
     while fcount and not n % 2:
         n /= 2
         fcount -= 1
