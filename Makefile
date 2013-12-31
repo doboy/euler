@@ -1,16 +1,47 @@
-py: pycaches python/README.md
+all: py hs
 
-pycaches: $(patsubst %.py,%.pycache,$(wildcard python/p*.py))
-python/p%.pycache: python/p%.py
-	python python/check.py $* > "$@"
+py: tmp python/README.md
+hs: tmp haskell/README.md
 
-python/README.md: python/p*.pycache
-	cat $^ > python/README.md
-	echo "      Solved:      `grep 'Solved' python/README.md | wc -l`" >> python/README.md
-	echo "      In Progress: `grep 'In Progress' python/README.md | wc -l`" >> python/README.md
-	echo "      Incorrect:   `grep 'Wrong Output' python/README.md | wc -l`" >> python/README.md
-	echo "      Error:       `grep 'Error' python/README.md | wc -l`" >> python/README.md
+tmp:
+	mkdir -p "$@"
+	mkdir -p "$@"/haskell
+	mkdir -p "$@"/python
+
+pymds := $(patsubst %.py,%.md,$(wildcard python/p*.py))
+hsmds := $(patsubst %.hs,%.md,$(wildcard haskell/p*.hs))
+
+
+define make-readme
+/bin/echo -n "problem $*: " > "$@"
+if [[ "`cat tmp/$<.out`" != "`grep '^$*[[:space:]]' answers.txt | cut -f 2 -d ' '`" ]] ; then \
+	echo "Expected $$(grep '^$*[[:space:]]' answers.txt | cut -f 2 -d ' '), got $$(cat tmp/$<.out)" >> "$@"; \
+else \
+	echo "Solved in $$(cat tmp/$<.time)ms" >> "$@" ; \
+fi
+endef
+
+python/p%.md: python/p%.py
+	TIMEFORMAT="%R"; { time python "$<" > "tmp/$<.out"; } 2> "tmp/$<.time"
+	$(make-out)
+
+haskell/p%.md: haskell/p%.hs
+	ghc -o tmp/$< $<
+	TIMEFORMAT="%R"; { time ./tmp/"$<" > "tmp/$<.out"; } 2> "tmp/$<.time"
+	$(make-out)
+
+define make-readmes
+cat $^ > "$@"
+sed -i "" 's/^/    /'  "$@"
+sed -i "" 's/ $$/ None/'  "$@"
+endef
+
+python/README.md: $(pymds)
+	$(make-readmes)
+
+haskell/README.md: $(hsmds)
+	$(make-readmes)
 
 clean:
-	find . -name *cache -delete
-	rm -f python/README.md
+	find . -name *.md -delete
+	rm -rf tmp
