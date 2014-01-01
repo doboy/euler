@@ -49,6 +49,7 @@ scala/README.md: $(scmds)
 .PHONY: clean tmp
 clean:
 	find . -name *.md -delete
+	find . -name *.class -delete
 	rm -rf tmp
 
 tmp:
