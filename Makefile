@@ -6,9 +6,9 @@ py: tmp python/README.md
 hs: tmp haskell/README.md
 sc: tmp scala/README.md
 
-pymds := $(patsubst %.py,%.md,$(wildcard python/p*.py))
-hsmds := $(patsubst %.hs,%.md,$(wildcard haskell/p*.hs))
-scmds := $(patsubst %.scala,%.md,$(wildcard scala/p*.scala))
+pymds := $(patsubst %.py,tmp/%.md,$(wildcard python/p*.py))
+hsmds := $(patsubst %.hs,tmp/%.md,$(wildcard haskell/p*.hs))
+scmds := $(patsubst %.scala,tmp/%.md,$(wildcard scala/p*.scala))
 
 define make-readme
 /bin/echo -n "problem $*: " > "$@"
@@ -19,16 +19,16 @@ else \
 fi
 endef
 
-python/p%.md: python/p%.py
+tmp/python/p%.md: python/p%.py
 	TIMEFORMAT="%R"; { time python "$<" > "tmp/$<.out"; } 2> "tmp/$<.time"
 	$(make-readme)
 
-scala/p%.md: scala/p%.scala
+tmp/scala/p%.md: scala/p%.scala
 	scalac -d tmp/scala $<
 	TIMEFORMAT="%R"; { time scala -classpath tmp/scala "p$*" > "tmp/$<.out"; } 2> "tmp/$<.time"
 	$(make-readme)
 
-haskell/p%.md: haskell/p%.hs
+tmp/haskell/p%.md: haskell/p%.hs
 	ghc -o tmp/$< $<
 	TIMEFORMAT="%R"; { time ./tmp/"$<" > "tmp/$<.out"; } 2> "tmp/$<.time"
 	$(make-readme)

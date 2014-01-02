@@ -1,3 +1,3 @@
-    problem 006: Solved in 0.558ms
-    problem 008: Solved in 0.643ms
-    problem 015: Solved in 0.479ms
+    problem 006: Solved in 0.571ms
+    problem 008: Solved in 0.719ms
+    problem 015: Solved in 0.502ms
