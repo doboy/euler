@@ -1,6 +1,6 @@
-all: _index.html
+all: index.html
 
-_index.html: py hs sc
+index.html: py hs sc
 
 py: tmp python/README.md
 hs: tmp haskell/README.md
@@ -48,7 +48,7 @@ haskell/README.md: $(hsmds)
 scala/README.md: $(scmds)
 	$(make-readmes)
 
-_index.html: */README.md
+index.html: */README.md
 	scala generate_html.scala > "$@"
 
 .PHONY: clean tmp
