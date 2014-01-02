@@ -16,7 +16,7 @@ class Problem(val number: Int) {
     }
 
   s"""    <td style="width:20px;height:20px;vertical-align:middle;background-color:$backgroundColor;">
-      <a style="text-decoration: none; color:#000" title="$title" href="projecteuler.net/problem=$number">
+      <a style="text-decoration: none; color:#000" title="$title" href="http://projecteuler.net/problem=$number">
         <div style="font-size:70%;text-align:center;color:#000;cursor:pointer;">
           $number
         </div>
@@ -36,7 +36,7 @@ class Solution(val language: String, val execution_time: Float) extends Ordered[
   }
 }
 
-object generate_readme {
+object generate_html {
   val questions = 400
   val questions_per_line = 20
   val problems = Range(0, questions + 1).map(new Problem(_))
@@ -56,10 +56,37 @@ object generate_readme {
       }
     }
 
-    println("Project Euler.net")
-    println("=================")
-    println("")
-    println("<table border='1'><tbody>")
+  println("""<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Euler by Doboy</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Project Euler</h1>
+          <h2>doboy's progress</h2>
+        </header>
+
+       <section id="downloads" class="clearfix">
+          <a href="https://github.com/Doboy/euler" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <section id="main_content">
+          <table border="1"><tbody>""")
+
     problems.drop(1).grouped(questions_per_line).foreach({
       chunk =>
          println("  <tr>")
@@ -69,11 +96,25 @@ object generate_readme {
          })
          println("  </tr>")
     })
-    println("</tbody></table>")
-    println("<br/>")
-    println("")
-    println(s"my friend key is `$friend_key`")
+
+    println("""</tbody></table>""")
+
+    println("""<p>""")
+    for(language <- List("python", "haskell", "scala")) {
+      val problem_solved = problems.flatMap(_.solutions).filter(_.language == language).length
+      println(s"<span><strong>$problem_solved</strong> problem solved in $language</span><br/>")
+    }
+    println("""</p>""")
+
+    println("""<p>friend key: <code>67894488177272_b3f57d3674eea31e6069b8800b331508</code></p>
+        </section>""")
+
+    println("""</div>
+    </div>
+  </body>
+</html>""")
+
   }
 }
 
-generate_readme.main(Array())
+generate_html.main(Array())
