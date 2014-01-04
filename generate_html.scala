@@ -101,8 +101,8 @@ object generate_html {
 
     println("""<p>""")
     for(language <- List("python", "haskell", "scala")) {
-      val problem_solved = problems.flatMap(_.solutions).filter(_.language == language).length
-      println(s"<span><strong>$problem_solved</strong> problem solved in $language</span><br/>")
+      val solutions = problems.flatMap(_.solutions).filter(_.language == language).length
+      println(s"<span><strong>$solutions</strong> solutions in $language</span><br/>")
     }
     println("""</p>""")
 
