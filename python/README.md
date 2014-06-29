@@ -50,7 +50,7 @@
     problem 050: Expected 997651, got None
     problem 052: Solved in 3.346ms
     problem 053: Solved in 0.058ms
-    problem 054: Expected 376, got None
+    problem 054: Solved in 0.231ms
     problem 055: Solved in 0.225ms
     problem 056: Solved in 0.865ms
     problem 057: Expected 153, got None
