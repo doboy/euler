@@ -207,7 +207,7 @@ def equals( *seq ):
         if seq[ 0 ] != x:
             return False
     return True
-    
+
 " 24"
 def fact( n ):
     r = 1
@@ -227,7 +227,7 @@ class Edge:
     pass
 
 class Graph:
-    
+
     def __init__( self, E, V ):
         self.Edges = E
         self.Vertices = V
@@ -275,7 +275,7 @@ def isBinaryPal( n ):
         reverse += temp & 1
         temp >>= 1
     return n == reverse
-        
+
 def isDecimalPal( n ):
     temp = n
     reverse = 0
@@ -284,14 +284,14 @@ def isDecimalPal( n ):
         reverse += temp % 10
         temp //= 10
     return n == reverse
-        
+
 " 22, 42"
 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 points = { chars[ i ] : i + 1 for i in xrange( len( chars ) ) }
 
 def score( wd ):
     return sum( map( points.get, wd ) )
-    
+
 " 42"
 
 def isTriangle( n ):
@@ -305,35 +305,17 @@ class modList( list ):
     def __init__( self, mod, *vals ):
         self.mod = mod
         list.__init__( self, vals )
-        
+
     def __getitem__( self, i ):
         return list.__getitem__( self, i % mod )
 
     def __setitem__( self, i, x ):
         return __setitem__( self, i, x )
 
-" Abstract class"
-class CSP:
-    
-    def __init__( self ):
-        pass
-
-    def getPossibleMoves( self, move ):
-        pass
-
-    def doMove( self, move ):
-        pass
-
-    def undoMove( self, move ):
-        pass
-    
-    def solve( self ):
-        pass
-
 " 98"
-def mapReduce( elements, 
+def mapReduce( elements,
                mapper,
-               reducer=lambda tup, el: tup + ( el, ), 
+               reducer=lambda tup, el: tup + ( el, ),
                base=(),
                keyfilter=lambda _: True, valfilter=lambda _:True ):
     mapped = map( mapper, elements )
@@ -343,7 +325,7 @@ def mapReduce( elements,
             if k not in mappee:
                 mappee[ k ] = []
             mappee[ k ].append( v )
-    
+
     if reducer:
         reducee = {}
         for k, v in mappee.iteritems():
@@ -351,7 +333,7 @@ def mapReduce( elements,
 
     """ is filter done on the keys or values? I assume keys
      makes sense for problem 98"""
-    
+
     return reducee
 
 " 35"
@@ -441,7 +423,7 @@ class graphSearch( object ):
     @staticmethod
     def getState( node ):
         return node[ 1 ]
-    
+
     @staticmethod
     def getDist( node ):
         return node[ 0 ]
@@ -466,7 +448,7 @@ class bfSearch( graphSearch ):
 
     def __init__( self, fringe, successorFn, goalStateFn, distFn ):
         graphSearch.__init__( self, fringe, successorFn, goalStateFn, distFn )
-        
+
     def add( self, fringe, to ):
         fringe.append( to )
 
@@ -476,7 +458,7 @@ class bfSearch( graphSearch ):
 class dfSearch( graphSearch ):
     def __init__( self, fringe, successorFn, goalStateFn, distFn ):
         graphSearch.__init__( self, fringe, successorFn, goalStateFn, distFn )
-        
+
     def add( self, fringe, to ):
         fringe.append( to )
 
@@ -490,10 +472,10 @@ class pqSearch( graphSearch ):
 
     def add( self, fringe, to ):
         heapq.heappush( fringe, to )
-    
+
     def pop( self, fringe ):
         return heapq.heappop( fringe )
-    
+
 class primSearch( pqSearch ):
     def __init__( self, fringe, successorFn, distFn, goalStateFn=lambda _: False ):
         pqSearch.__init__( self, fringe, successorFn, goalStateFn, distFn )
@@ -615,16 +597,16 @@ class discreteDist:
         self.setCdf()
 
     def setPdf( self ):
-        ''' P[ x = i ], calculates the pdf 
+        ''' P[ x = i ], calculates the pdf
         must be implemented by derived class'''
-        
+
     def setCdf( self ):
         ''' P[ x <= i ], calculates the cdf '''
         cdf = 0
         for val in sorted( self.pdf ):
             cdf += self.pdf[ val ]
             self.cdf[ val ] = cdf
-        
+
     def getPdf( self, val ):
         return self.pdf.get( val, 0 )
 
@@ -689,6 +671,3 @@ def ignored( M, i, j ):
             row.append( M[ _i ][ _j ] )
         ret.append( row )
     return ret
-
-
-    
