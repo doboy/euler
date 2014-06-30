@@ -49,7 +49,7 @@ scala/README.md: $(scmds)
 	$(make-readmes)
 
 index.html: */README.md
-	scala generate_html.scala > "$@"
+	 ruby generate_html.rb
 
 .PHONY: clean tmp
 clean:

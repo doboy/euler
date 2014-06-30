@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Euler by Doboy</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="inner">
+        <header>
+          <h1>Project Euler</h1>
+          <h2>doboy's progress</h2>
+        </header>
+       <section id="downloads" class="clearfix">
+        <a href="https://github.com/Doboy/euler" id="view-on-github" class="button"><span>View on GitHub</span></a>
+      </section>
+      <section id="main_content">
+        <table border="1">
+           <tbody><% for @_problems in @problem_chunks %>
+            <tr><% for @problem in @_problems %>
+              <td style="width:20px;
+                         height:20px;
+                         vertical-align:middle;
+                         background-color:<%= @problem.solved? ? "#CEE7B6" : "#FFF" %>;">
+                <a style="text-decoration: none;
+                          color:#000"<% if @problem.solved? %>
+                   title="Solved in <%= @problem.best_solution.execution_time %>ms with <%= @problem.best_solution.language %>"<% end %>
+                   href="http://projecteuler.net/problem=<%= @problem.number %>">
+                  <div style="font-size:70%;
+                              text-align:center;
+                              color:#000;
+                              cursor:pointer;">
+                    <%= @problem.number %>
+                  </div>
+                </a>
+              </td><% end %>
+            </tr><% end %>
+           </tbody>
+        </table>
+        <p><% @solutions_pre_language.each do |language, solutions| %>
+          <span>
+            <strong>
+              <%= solutions.length %>
+            </strong> solutions in <%= language %>
+          </span>
+          <br/><% end %>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
