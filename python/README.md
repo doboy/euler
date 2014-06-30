@@ -77,7 +77,8 @@
     problem 092: Expected 8581146, got None
     problem 093: Expected 1258, got None
     problem 095: Expected None, got None
-    problem 097: Solved in 0.035ms
+    problem 096: Solved in 36.546ms
+    problem 097: Solved in 0.026ms
     problem 098: Expected 18769, got None
     problem 099: Solved in 0.051ms
     problem 100: Expected None, got 4
