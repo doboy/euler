@@ -55,7 +55,7 @@ class IndexHtml
 end
 
 def main
-  problems = 1.upto(400).map { |number| Problem.new(number) }
+  problems = 1.upto(300).map { |number| Problem.new(number) }
   readme_regexp = /problem (\d+): Solved in (\d+.\d+)ms/
 
   ["python", "haskell", "scala"].each do |language|

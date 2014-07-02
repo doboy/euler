@@ -2,35 +2,35 @@ all: index.html
 
 index.html: py hs sc
 
-py: tmp python/README.md
-hs: tmp haskell/README.md
-sc: tmp scala/README.md
+py: build python/README.md
+hs: build haskell/README.md
+sc: build scala/README.md
 
-pymds := $(patsubst %.py,tmp/%.md,$(wildcard python/p*.py))
-hsmds := $(patsubst %.hs,tmp/%.md,$(wildcard haskell/p*.hs))
-scmds := $(patsubst %.scala,tmp/%.md,$(wildcard scala/p*.scala))
+pymds := $(patsubst %.py,build/%.md,$(wildcard python/p*.py))
+hsmds := $(patsubst %.hs,build/%.md,$(wildcard haskell/p*.hs))
+scmds := $(patsubst %.scala,build/%.md,$(wildcard scala/p*.scala))
 
 define make-readme
 /bin/echo -n "problem $*: " > "$@"
-if [[ "`cat tmp/$<.out`" != "`grep '^$*[[:space:]]' answers.txt | cut -f 2 -d ' '`" ]] ; then \
-	echo "Expected $$(grep '^$*[[:space:]]' answers.txt | cut -f 2 -d ' '), got $$(cat tmp/$<.out)" >> "$@"; \
+if [[ "`cat build/$<.out`" != "`grep '^$*[[:space:]]' answers.txt | cut -f 2 -d ' '`" ]] ; then \
+	echo "Expected $$(grep '^$*[[:space:]]' answers.txt | cut -f 2 -d ' '), got $$(cat build/$<.out)" >> "$@"; \
 else \
-	echo "Solved in $$(cat tmp/$<.time)ms" >> "$@" ; \
+	echo "Solved in $$(cat build/$<.time)ms" >> "$@" ; \
 fi
 endef
 
-tmp/python/p%.md: python/p%.py
-	TIMEFORMAT="%R"; { time python "$<" > "tmp/$<.out"; } 2> "tmp/$<.time"
+build/python/p%.md: python/p%.py
+	TIMEFORMAT="%R"; { time python "$<" > "build/$<.out"; } 2> "build/$<.time"
 	$(make-readme)
 
-tmp/scala/p%.md: scala/p%.scala
-	scalac -d tmp/scala $<
-	TIMEFORMAT="%R"; { time scala -classpath tmp/scala "p$*" > "tmp/$<.out"; } 2> "tmp/$<.time"
+build/scala/p%.md: scala/p%.scala
+	scalac -d build/scala $<
+	TIMEFORMAT="%R"; { time scala -classpath build/scala "p$*" > "build/$<.out"; } 2> "build/$<.time"
 	$(make-readme)
 
-tmp/haskell/p%.md: haskell/p%.hs
-	ghc -o tmp/$< $<
-	TIMEFORMAT="%R"; { time ./tmp/"$<" > "tmp/$<.out"; } 2> "tmp/$<.time"
+build/haskell/p%.md: haskell/p%.hs
+	ghc -o build/$< $<
+	TIMEFORMAT="%R"; { time ./build/"$<" > "build/$<.out"; } 2> "build/$<.time"
 	$(make-readme)
 
 define make-readmes
@@ -51,13 +51,13 @@ scala/README.md: $(scmds)
 index.html: */README.md
 	 ruby generate_html.rb
 
-.PHONY: clean tmp
+.PHONY: clean build
 clean:
 	find . -name *.md -delete
 	find . -name *.class -delete
-	rm -rf tmp
+	rm -rf build
 
-tmp:
+build:
 	mkdir -p "$@"
 	mkdir -p "$@"/haskell
 	mkdir -p "$@"/python
