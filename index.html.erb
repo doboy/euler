@@ -32,7 +32,7 @@
                          background-color:<%= @problem.solved? ? "#CEE7B6" : "#FFF" %>;">
                 <a style="text-decoration: none;
                           color:#000"<% if @problem.solved? %>
-                   title="Solved in <%= @problem.best_solution.execution_time %>ms with <%= @problem.best_solution.language %>"<% end %>
+                   title="Solved in <%= @problem.best_solution.execution_time %>s with <%= @problem.best_solution.language %>"<% end %>
                    href="http://projecteuler.net/problem=<%= @problem.number %>">
                   <div style="font-size:70%;
                               text-align:center;

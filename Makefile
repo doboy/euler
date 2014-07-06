@@ -1,11 +1,13 @@
 all: index.html
 
-index.html: py hs sc
+index.html: py hs sc rb
 
+rb: build ruby/README.md
 py: build python/README.md
 hs: build haskell/README.md
 sc: build scala/README.md
 
+rbmds := $(patsubst %.rb,build/%.md,$(wildcard ruby/p*.rb))
 pymds := $(patsubst %.py,build/%.md,$(wildcard python/p*.py))
 hsmds := $(patsubst %.hs,build/%.md,$(wildcard haskell/p*.hs))
 scmds := $(patsubst %.scala,build/%.md,$(wildcard scala/p*.scala))
@@ -18,6 +20,10 @@ else \
 	echo "Solved in $$(cat build/$<.time)ms" >> "$@" ; \
 fi
 endef
+
+build/ruby/p%.md: ruby/p%.rb
+	TIMEFORMAT="%R"; { time ruby "$<" > "build/$<.out"; } 2> "build/$<.time"
+	$(make-readme)
 
 build/python/p%.md: python/p%.py
 	TIMEFORMAT="%R"; { time python "$<" > "build/$<.out"; } 2> "build/$<.time"
@@ -39,6 +45,9 @@ sed -i "" 's/^/    /'  "$@"
 sed -i "" 's/ $$/ None/'  "$@"
 endef
 
+ruby/README.md: $(rbmds)
+	$(make-readmes)
+
 python/README.md: $(pymds)
 	$(make-readmes)
 
@@ -59,6 +68,7 @@ clean:
 
 build:
 	mkdir -p "$@"
-	mkdir -p "$@"/haskell
-	mkdir -p "$@"/python
-	mkdir -p "$@"/scala
+	mkdir -p "$@/haskell"
+	mkdir -p "$@/python"
+	mkdir -p "$@/scala"
+	mkdir -p "$@/ruby"
