@@ -6,4 +6,5 @@
     problem 092: Solved in 35.053ms
     problem 095: Expected None, got None
     problem 098: Solved in 2.354ms
+    problem 107: Solved in 0.037ms
     problem 160: Expected None, got None
