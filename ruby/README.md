@@ -4,4 +4,6 @@
     problem 080: Solved in 0.063ms
     problem 085: Solved in 0.206ms
     problem 092: Solved in 35.053ms
+    problem 095: Expected None, got None
+    problem 098: Solved in 2.354ms
     problem 160: Expected None, got None
