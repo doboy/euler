@@ -1,0 +1,22 @@
+.problem {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background-color: #FFF;
+}
+
+.problem.solved {
+  background-color: #CEE7B6;
+}
+
+.problem > a {
+  text-decoration: none;
+  color:#000
+}
+
+.problem > a > div {
+  font-size:70%;
+  text-align:center;
+  color:#000;
+  cursor:pointer;
+}
