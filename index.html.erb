@@ -43,6 +43,11 @@
             </strong> solutions in <%= language %>
           </span>
           <br/><% end %>
+          <span>
+            <strong>
+              <%= @problems.select { |p| p.solutions.length > 0 }.length  %>
+            </strong> unique solutions
+          </span>
         </p>
       </div>
     </div>
