@@ -56,7 +56,7 @@ end
 
 def main
   problems = 1.upto(300).map { |number| Problem.new(number) }
-  readme_regexp = /problem (\d+): Solved in (\d+.\d+)ms/
+  readme_regexp = /problem (\d+): Solved in (\d+.\d+)s/
 
   ["python", "haskell", "scala", "ruby"].each do |language|
     contents = File.read("#{language}/README.md")

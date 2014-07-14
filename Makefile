@@ -17,7 +17,7 @@ define make-readme
 if [[ "`cat build/$<.out`" != "`grep '^$*[[:space:]]' answers.txt | cut -f 2 -d ' '`" ]] ; then \
 	echo "Expected $$(grep '^$*[[:space:]]' answers.txt | cut -f 2 -d ' '), got $$(cat build/$<.out)" >> "$@"; \
 else \
-	echo "Solved in $$(cat build/$<.time)ms" >> "$@" ; \
+	echo "Solved in $$(cat build/$<.time)s" >> "$@" ; \
 fi
 endef
 
