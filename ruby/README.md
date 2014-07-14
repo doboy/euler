@@ -4,6 +4,7 @@
     problem 050: Solved in 29.585ms
     problem 051: Solved in 4.558ms
     problem 057: Solved in 0.057ms
+    problem 058: Solved in 22.330ms
     problem 071: Solved in 5.285ms
     problem 075: Expected None, got None
     problem 079: Solved in 0.029ms
