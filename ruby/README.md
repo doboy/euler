@@ -1,3 +1,4 @@
+    problem 044: Solved in 55.876ms
     problem 047: Solved in 15.975ms
     problem 050: Solved in 29.585ms
     problem 071: Solved in 5.285ms
