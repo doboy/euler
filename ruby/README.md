@@ -5,6 +5,9 @@
     problem 051: Solved in 4.558s
     problem 057: Solved in 0.057s
     problem 058: Solved in 22.330s
+    problem 060: Expected None, got None
+    problem 061: Expected 28684, got None
+    problem 063: Solved in 0.028s
     problem 071: Solved in 5.285s
     problem 075: Expected None, got None
     problem 079: Solved in 0.029s
