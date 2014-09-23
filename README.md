@@ -1,4 +1,4 @@
-Doboy/Euler
+huan/euler
 ===========
 
-see http://doboy.github.io/euler
+see http://huan.github.io/euler
